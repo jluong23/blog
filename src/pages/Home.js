@@ -12,8 +12,7 @@ const TitleWrapper = styled.div`
   justify-content: center;
   padding: 3em 0;
 `
-const Header = styled.div`
-`
+
 const Home = (props) => {
   return (
     <div className="home">
