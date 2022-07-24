@@ -10,8 +10,8 @@ const BlogOverview = (props) => {
   return (
     <Wrapper>
       <h1>Blog.</h1>
-      <Article color="deepskyblue" title="Blog Article 1" description = "Blog Article 1: Learn how to do something" imgSrc={articleImage}/>
-      <Article color="firebrick" title="Blog Article 2" description = "Blog Article 2: Testing" imgSrc={articleImage}/>
+      <Article color="deepskyblue" title="Blog Article 1" description = "Learn how to do something" imgSrc={articleImage}/>
+      <Article color="firebrick" title="Blog Article 2" description = "Testing"/>
     </Wrapper>
   );
 };

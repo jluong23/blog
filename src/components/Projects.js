@@ -11,7 +11,7 @@ const Projects = (props) => {
   return (
     <Wrapper>
       <h1>Projects.</h1>
-      <Article color="violet" title="Project 1" description = "Project 1: John Mayer Fan Site" imgSrc={articleImage}/>
+      <Article color="violet" title="John Mayer Fan Site" description = "A fake shopping cart page which interacts with the Spotify API, built using React." imgSrc={articleImage}/>
     </Wrapper>
   );
 };

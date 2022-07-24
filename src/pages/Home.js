@@ -3,9 +3,9 @@
 import React from "react";
 import styled from "styled-components";
 import BlogOverview from "../components/BlogOverview";
-import Contact from "../components/Contact";
 import Projects from "../components/Projects";
 import University from "../components/University";
+import About from "../components/About";
 
 const TitleWrapper = styled.div`
   display: flex;
@@ -14,9 +14,8 @@ const TitleWrapper = styled.div`
   font-size: 1.2em;
 `
 const HomeWrapper = styled.div`
-  font-size: 3rem;
   & h1 {
-    font-size: 1em;
+    font-size: 2.8em;
   }
 `
 
@@ -31,7 +30,7 @@ const Home = (props) => {
   return (
     <HomeWrapper>
       {title}
-      <Contact />
+      <About />
       <BlogOverview />
       <Projects />
       <University />

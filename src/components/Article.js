@@ -10,7 +10,6 @@ const ArticleTitle = styled.h2`
 `
 
 const ArticleDescription = styled.div`
-    font-size: 0.4em;
     text-align: center;
 `
 
@@ -33,7 +32,7 @@ const Article = ({color, title, description, imgSrc}) => {
     <Wrapper color={color}>
       <ArticleTitle>{title}</ArticleTitle>
       <ArticleContent>
-        <ArticleImage src={imgSrc}/>
+        {imgSrc == null ?  <ArticleImage/> : <ArticleImage  src={imgSrc} />}
         <ArticleDescription>{description}</ArticleDescription>
       </ArticleContent>
     </Wrapper>
