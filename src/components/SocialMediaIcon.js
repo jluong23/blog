@@ -3,18 +3,19 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
+const Icon = styled.a`
+    background-color: ${(props) => 
+        props.color == null ? "#FFF" : props.color
+    };
+    padding: 0 .2em;
+    color: inherit;
+`
+
 const SocialMediaIcon = (props) => {
     const {url, icon, color} = props;
 
-    const Icon = styled.a`
-        background-color: ${color == null ? "#FFF" : color };
-        font-size: 3em;
-        padding: 0 .2em;
-        color: inherit;
-    `
-
     return (
-        <Icon href={url}>
+        <Icon href={url} color={color}>
             <FontAwesomeIcon icon={icon}/>
         </Icon>
     );
