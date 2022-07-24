@@ -22,10 +22,10 @@ const HomeWrapper = styled.div`
 
 const title = (
   <TitleWrapper>
-        <h1>
-          Hello, <br /> I'm James.
-        </h1>
-      </TitleWrapper>
+    <h1>
+      Hello, <br /> I'm James.
+    </h1>
+  </TitleWrapper>
 )
 const Home = (props) => {
   return (

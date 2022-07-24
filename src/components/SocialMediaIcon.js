@@ -4,11 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const Icon = styled.a`
-    background-color: ${(props) => 
-        props.color == null ? "#FFF" : props.color
-    };
-    padding: 0 .2em;
     color: inherit;
+    margin: 0 .2em;
+    background-color: transparent;
 `
 
 const SocialMediaIcon = (props) => {

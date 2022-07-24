@@ -16,10 +16,10 @@ const Wrapper = styled.div`
 const Contact = (props) => {
   return (
     <Wrapper>
-      <SocialMediaIcon icon={faInstagram} color="#FFF" url="https://www.instagram.com/jamesluong1/"/>
-      <SocialMediaIcon icon={faEnvelope} color="#FFF" url="mailto:jamesluong@hotmail.co.uk"/>
-      <SocialMediaIcon icon={faGithub} color="#FFF" url="https://github.com/jluong23"/>
-      <SocialMediaIcon icon={faYoutube} color="#FFF" url="https://www.youtube.com/user/darkdragon1623"/>
+      <SocialMediaIcon icon={faInstagram} url="https://www.instagram.com/jamesluong1/"/>
+      <SocialMediaIcon icon={faEnvelope} url="mailto:jamesluong@hotmail.co.uk"/>
+      <SocialMediaIcon icon={faGithub} url="https://github.com/jluong23"/>
+      <SocialMediaIcon icon={faYoutube} url="https://www.youtube.com/user/darkdragon1623"/>
     </Wrapper>
   );
 };
