@@ -8,7 +8,7 @@ import re
 file_name = sys.argv[1]
 edited_file_name = file_name.split(".")[0]
 
-pattern = re.compile('(class|style|width|height)="[^"]+"|', re.IGNORECASE)
+pattern = re.compile('(class|style|width|height|alt)="[^"]+"|', re.IGNORECASE)
 comments_pattern = re.compile('(<!--)(.*)(-->)', re.IGNORECASE)
 # try:
 with open("./" + file_name, "r") as blog, open("./edited_blog.html", "w+") as edited_blog:

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Article from "./Article";
 import articleImage from "../assets/article.jpg";
-import blogs from "../blogs/blogs.json";
+import blogData from "../blogs/blogData.json";
 const Wrapper = styled.div`
   padding: .5em;
 `
@@ -16,7 +16,7 @@ const BlogOverview = (props) => {
   return (
     <Wrapper>
       <h1>Blog.</h1>
-      {blogs.map((blog) => {
+      {blogData.map((blog) => {
         let url = "/blog/" + blog["id"];
         return (
           <ArticleLink href={url} key={blog["id"]}>

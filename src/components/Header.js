@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faMagnifyingGlass, faHome } from '@fortawesome/free-solid-svg-icons'
 
 const Wrapper = styled.div`
     display: flex;
@@ -12,6 +12,9 @@ const Header = (props) => {
   return (
     <Wrapper>
         <FontAwesomeIcon icon={faBars} size="lg"/>
+        <a href="/">
+          <FontAwesomeIcon icon={faHome} size="lg"/>
+        </a>
         <FontAwesomeIcon icon={faMagnifyingGlass} size="lg"/>
     </Wrapper>
   );
