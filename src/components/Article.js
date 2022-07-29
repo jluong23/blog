@@ -27,14 +27,22 @@ const ArticleImage = styled.img`
     height: 120px;
 `
 
-const Article = ({color, title, description, imgSrc}) => {
+const ArticleLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+`
+
+
+const Article = ({color, title, description, imgSrc, onClickUrl}) => {
   return (
     <Wrapper color={color}>
-      <ArticleTitle>{title}</ArticleTitle>
-      <ArticleContent>
-        {imgSrc == null ?  <ArticleImage/> : <ArticleImage  src={imgSrc} />}
-        <ArticleDescription>{description}</ArticleDescription>
-      </ArticleContent>
+      <ArticleLink href={onClickUrl}>
+        <ArticleTitle>{title}</ArticleTitle>
+        <ArticleContent>
+          {imgSrc == null ?  <ArticleImage/> : <ArticleImage  src={imgSrc} />}
+          <ArticleDescription>{description}</ArticleDescription>
+        </ArticleContent>
+      </ArticleLink>
     </Wrapper>
   );
 };

@@ -8,7 +8,6 @@ const Wrapper = styled.div`
 `
 
 const University = (props) => {
-  console.log(articleImage);
   return (
     <Wrapper>
       <h1>University.</h1>
