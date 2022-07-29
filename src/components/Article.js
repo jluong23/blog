@@ -1,9 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrapper = styled.article`
   padding-bottom: .3em;
   margin: 5em 0;
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
 `
 const ArticleTitle = styled.h2`
     text-align: center;
@@ -29,22 +35,16 @@ const ArticleImage = styled.img`
     }
 `
 
-const ArticleLink = styled.a`
-  text-decoration: none;
-  color: inherit;
-`
-
-
 const Article = ({color, title, description, imgSrc, onClickUrl}) => {
   return (
     <Wrapper color={color}>
-      <ArticleLink href={onClickUrl}>
+      <Link to={onClickUrl}>
         <ArticleTitle>{title}</ArticleTitle>  
         <ArticleContent>
           {imgSrc == null ?  <ArticleImage/> : <ArticleImage  src={imgSrc} />}
           <ArticleDescription>{description}</ArticleDescription>
         </ArticleContent>
-      </ArticleLink>
+      </Link>
     </Wrapper>
   );
 };
