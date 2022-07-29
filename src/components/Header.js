@@ -14,7 +14,7 @@ const Header = (props) => {
   return (
     <Wrapper path={window.location.pathname}>
         <FontAwesomeIcon icon={faBars} size="lg"/>
-        <a href="/">
+        <a href="/blog">
           <FontAwesomeIcon icon={faHome} size="lg"/>
         </a>
         <FontAwesomeIcon icon={faMagnifyingGlass} size="lg"/>

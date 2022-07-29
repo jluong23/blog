@@ -17,7 +17,7 @@ const ContentWrapper = styled.div`
 
 const App = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename="/blog">
       <AppWrapper>
         <Header />
         <ContentWrapper>

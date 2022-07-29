@@ -22,7 +22,7 @@ const BlogOverview = (props) => {
       <h1>Blog.</h1>
       <Blogs>
         {blogData.map((blog) => {
-          let url = "/posts/" + blog["id"];;
+          let url = "/blog/posts/" + blog["id"];;
           let imgFile = require("../assets/" + blog["imgName"]);
           
           return (
