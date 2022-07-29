@@ -11,7 +11,7 @@ const University = (props) => {
   return (
     <Wrapper>
       <h1>University.</h1>
-      <Article color="coral" title="Dissertation: Google Photos API in VR" description = "Project for final year dissertation, creating a VR application to view a user's Google Photos images." imgSrc={articleImage}/>
+      <Article color="coral" title="COM3610 Dissertation Project - VR API Driven Interface" description = "Project for final year dissertation, creating a VR application to view a user's Google Photos images." imgSrc={articleImage}/>
     </Wrapper>
   );
 };

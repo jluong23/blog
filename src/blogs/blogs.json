@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "date": "2020/08/24",
+        "htmlFile": "chess.html",
+        "title": "My 'Shower of Blunders' Game",
+        "description": "Chess is cool",
+        "color": "firebrick"
+    },
+    {
+        "id": 2,
+        "date": "2022/07/29",
+        "htmlFile": "",
+        "title": "Blog Article 2",
+        "description": "Learn how to do something",
+        "color": "deepskyblue"
+    }
+
+
+
+]
