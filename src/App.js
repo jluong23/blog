@@ -23,8 +23,8 @@ const App = () => {
         <ContentWrapper>
           <Routes>
             <Route path="/" element={<Home />}/>
-            <Route path="/blog" element={<BlogOverview />} />
-            <Route path="/blog/:blogId" element={<BlogPost />}/>
+            <Route path="/posts" element={<BlogOverview />} />
+            <Route path="/posts/:blogId" element={<BlogPost />}/>
           </Routes>
         </ContentWrapper>
       </AppWrapper>
