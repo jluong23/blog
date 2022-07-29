@@ -2,7 +2,7 @@ import {React} from "react";
 import { useParams } from "react-router-dom";
 import getBlogContent from "../blogs/Blogs";
 import styled from "styled-components";
-import blogData from "../blogs/blogData.json";
+import blogData from "../blogs/BlogData.json";
 const Wrapper = styled.div`
   padding: .5em;
 `

@@ -4,16 +4,15 @@
         "date": "2020/08/24",
         "title": "My 'Shower of Blunders' Game",
         "description": "Chess is cool",
-        "color": "firebrick"
+        "color": "firebrick",
+        "imgName": "chess.jpg" 
     },
     {
         "id": 2,
         "date": "2022/07/29",
         "title": "Blog Article 2",
         "description": "Learn how to do something",
-        "color": "deepskyblue"
+        "color": "deepskyblue",
+        "imgName": "ktane.jpg" 
     }
-
-
-
 ]
