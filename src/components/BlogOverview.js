@@ -6,8 +6,6 @@ const Wrapper = styled.div`
   padding: .5em;
 `
 
-
-
 const BlogOverview = (props) => {
   return (
     <Wrapper>

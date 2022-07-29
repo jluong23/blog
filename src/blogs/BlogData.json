@@ -3,15 +3,15 @@
         "id": 1,
         "date": "2020/08/24",
         "title": "My 'Shower of Blunders' Game",
-        "description": "Chess is cool",
+        "description": "Inspiration from Frank Marshall's 'Shower of Gold' match.",
         "color": "firebrick",
         "imgName": "chess.jpg" 
     },
     {
         "id": 2,
-        "date": "2022/07/29",
-        "title": "Blog Article 2",
-        "description": "Learn how to do something",
+        "date": "2020/04/12",
+        "title": "University of Sheffield – First Year Memories",
+        "description": "A summary of first year.",
         "color": "deepskyblue",
         "imgName": "ktane.jpg" 
     }

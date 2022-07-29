@@ -22,7 +22,7 @@ const ArticleContent = styled.div`
 
 const ArticleImage = styled.img`
     background-color: gray;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width: 120px;
     height: 120px;
 `

@@ -11,7 +11,14 @@ const University = (props) => {
   return (
     <Wrapper>
       <h1>University.</h1>
-      <Article color="coral" title="COM3610 Dissertation Project - VR API Driven Interface" description = "Project for final year dissertation, creating a VR application to view a user's Google Photos images." imgSrc={articleImage}/>
+      <Article 
+        color="coral" 
+        title="COM3610 Dissertation Project - VR API Driven Interface" 
+        description = "Project for final year dissertation, creating a VR application to view a user's Google Photos images." 
+        imgSrc={articleImage}
+        onClickUrl="https://www.youtube.com/watch?v=kjZV_de_YFg"
+
+        />
     </Wrapper>
   );
 };
