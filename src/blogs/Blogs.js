@@ -3,9 +3,9 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   & img {
     width: 100%;
-    @media (min-width: 800px) {
+    @media screen and (min-width: 800px) {
       width: 25%;
-  }
+    }
   }
 ` 
 

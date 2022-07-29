@@ -21,15 +21,15 @@ const HomeWrapper = styled.div`
     font-size: 2.8em;
   }
 `
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+`
 
 const HomeScreen = () => {
-  const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  `
   const fadeInAnimation = useSpring({ 
     to: { opacity: 1 }, 
     from: { opacity: 0 },
