@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.color ? props.color : null};
+  background-color: darkgray;
   padding-bottom: .3em;
 `
 const ArticleTitle = styled.h2`

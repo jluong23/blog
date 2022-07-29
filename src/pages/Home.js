@@ -3,8 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import BlogOverview from "../components/BlogOverview";
-import Projects from "../components/Projects";
-import University from "../components/University";
+import ProjectOverview from "../components/ProjectOverview";
 import About from "../components/About";
 import { useSpring, animated} from "react-spring";
 
@@ -56,9 +55,8 @@ const Home = (props) => {
   return (
     <HomeWrapper>
       <HomeScreen />
-      {/* <BlogOverview />
-      <Projects />
-      <University /> */}
+      <ProjectOverview />
+      <BlogOverview />
     </HomeWrapper>
   );
 };

@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title":"John Mayer Fan Site", 
+        "description":"A fake shopping cart page which interacts with the Spotify API, built using React.", 
+        "imgName": "john.jpg",
+        "url": "https://jluong23.github.io/shopping-cart-project/"
+    },
+    {
+        "id": 2,
+        "title": "COM3610 Dissertation Project - VR API Driven Interface",
+        "description": "Project for final year dissertation, creating a VR application to view a user's Google Photos images.", 
+        "imgName": "diss.png",
+        "onClickUrl": "https://www.youtube.com/watch?v=kjZV_de_YFg"
+    }
+]
