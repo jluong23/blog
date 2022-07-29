@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import SocialMediaIcon from "./SocialMediaIcon";
 
 const Wrapper = styled.div`
   padding: .3em;
+
+  & p {
+    text-align: center;
+  }
 `
 
 const Icons = styled.div`
@@ -21,7 +24,6 @@ const Icons = styled.div`
 const About = (props) => {
   return (
     <Wrapper>
-      <h1>Me.</h1>
       <p>Computer Science BSc at the University of Sheffield.</p>
       <Icons>
         <SocialMediaIcon icon={faInstagram} url="https://www.instagram.com/jamesluong1/"/>

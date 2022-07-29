@@ -7,9 +7,6 @@ const Wrapper = styled.div`
   padding: .5em;
 `
 
-const BlogContent = styled.div`
-`
-
 const BlogPost = (props) => {
   const {blogId} = useParams()
   const blog = blogData.find((b) => b.id == blogId)

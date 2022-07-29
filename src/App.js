@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import BlogPost from "./components/BlogPost";
+import BlogPost from "./pages/BlogPost";
 import "./styling.css";
 import BlogOverview from "./components/BlogOverview";
 const App = () => {
