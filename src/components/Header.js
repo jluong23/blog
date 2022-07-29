@@ -7,10 +7,12 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    position: ${(props) => props.path == "/" ? "absolute" : null};
+    width: 100%;
 `
 const Header = (props) => {
   return (
-    <Wrapper>
+    <Wrapper path={window.location.pathname}>
         <FontAwesomeIcon icon={faBars} size="lg"/>
         <a href="/">
           <FontAwesomeIcon icon={faHome} size="lg"/>

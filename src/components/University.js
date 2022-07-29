@@ -3,13 +3,10 @@ import styled from "styled-components";
 import Article from "./Article";
 import articleImage from "../assets/ktane.jpg";
 
-const Wrapper = styled.div`
-  padding: .5em;
-`
 
 const University = (props) => {
   return (
-    <Wrapper>
+    <div>
       <h1>University.</h1>
       <Article 
         color="coral" 
@@ -19,7 +16,7 @@ const University = (props) => {
         onClickUrl="https://www.youtube.com/watch?v=kjZV_de_YFg"
 
         />
-    </Wrapper>
+    </div>
   );
 };
 

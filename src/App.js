@@ -4,17 +4,30 @@ import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
 import "./styling.css";
 import BlogOverview from "./components/BlogOverview";
+import styled from "styled-components";
+
+const AppWrapper = styled.div`
+  height: 100%;
+`
+
+const ContentWrapper = styled.div`
+  padding: 0.5em;
+  height: 100%;
+`
+
 const App = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <div>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/blog" element={<BlogOverview />} />
-        <Route path="/blog/:blogId" element={<BlogPost />}/>
-      </Routes>
-    </div>
+      <AppWrapper>
+        <Header />
+        <ContentWrapper>
+          <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/blog" element={<BlogOverview />} />
+            <Route path="/blog/:blogId" element={<BlogPost />}/>
+          </Routes>
+        </ContentWrapper>
+      </AppWrapper>
     </BrowserRouter>
   );
 };

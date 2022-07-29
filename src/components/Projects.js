@@ -3,13 +3,9 @@ import styled from "styled-components";
 import Article from "./Article";
 import articleImage from "../assets/john.jpg";
 
-const Wrapper = styled.div`
-  padding: .5em;
-`
-
 const Projects = (props) => {
   return (
-    <Wrapper>
+    <div>
       <h1>Projects.</h1>
       <Article 
         color="violet" 
@@ -19,7 +15,7 @@ const Projects = (props) => {
         onClickUrl="https://jluong23.github.io/shopping-cart-project/"
 
         />
-    </Wrapper>
+    </div>
   );
 };
 

@@ -24,7 +24,7 @@ const Icons = styled.div`
 const About = (props) => {
   return (
     <Wrapper>
-      <p>Computer Science BSc at the University of Sheffield.</p>
+      <p>Computer Science BSc Graduate from the University of Sheffield.</p>
       <Icons>
         <SocialMediaIcon icon={faInstagram} url="https://www.instagram.com/jamesluong1/"/>
         <SocialMediaIcon icon={faEnvelope} url="mailto:jamesluong@hotmail.co.uk"/>
