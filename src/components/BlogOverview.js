@@ -5,12 +5,14 @@ import blogData from "../blogs/BlogData.json";
 
 const Wrapper = styled.div`
   background-color: darkgray;
+  margin-top: 5em;
 `
 
 const Blogs = styled.div`
   display: flex;
   flex-direction: column;
-  
+  align-items: center;
+  justify-content: center;
   @media screen and (min-width: 800px) {
     flex-direction: row;
   }
@@ -26,6 +28,7 @@ const BlogOverview = (props) => {
           let thumbnail = require("../blogs/thumbnails/" + blog["thumbnail"]);
           return (
             <Article 
+              variant="blog"
               key={blog["id"]} 
               color={blog["color"]} 
               title = {blog["title"]} 

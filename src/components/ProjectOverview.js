@@ -22,6 +22,7 @@ const ProjectOverview = (props) => {
           let thumbnail = require("../projects/thumbnails/" + project["thumbnail"]);
           return (
             <Article 
+              variant="project"
               key={project["id"]}
               title={project["title"]} 
               description={project["description"]}

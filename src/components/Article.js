@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.article`
   padding-bottom: .3em;
-  margin: 5em 0;
+  margin: 1em 0;
 
   & a {
     text-decoration: none;
@@ -13,26 +13,36 @@ const Wrapper = styled.article`
 `
 const ArticleTitle = styled.h2`
     text-align: center;
-`
-
-const ArticleDescription = styled.div`
-    text-align: center;
+    padding-bottom: 1em;
 `
 
 const ArticleContent = styled.div`
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+  /* article description */
+  & p {
+    padding: .5em;
+    width: 60%;
+    text-align: center;
+    max-width: 350px;
+  }
+
+  @media screen and (min-width: 500px) {
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  }
 `
 
 const ArticleImage = styled.img`
-    background-color: gray;
-    opacity: 50%;
-    width: 50%;
-    @media screen and (min-width: 800px) {
-      width: 25%;
-    }
+  background-color: gray;
+  opacity: 50%;
+  width: 50%;
+  max-width: 500px;
+  /* @media screen and (min-width: 1000px) {
+    width: 35%;
+  } */
 `
 
 const Article = ({color, title, description, thumbnail, onClickUrl}) => {
@@ -42,7 +52,7 @@ const Article = ({color, title, description, thumbnail, onClickUrl}) => {
         <ArticleTitle>{title}</ArticleTitle>  
         <ArticleContent>
           {thumbnail == null ?  <ArticleImage/> : <ArticleImage  src={thumbnail} />}
-          <ArticleDescription>{description}</ArticleDescription>
+          <p>{description}</p>
         </ArticleContent>
       </Link>
     </Wrapper>

@@ -10,11 +10,15 @@ const Figure = styled.figure`
     text-align: center;
 `
 
-const BlogImage = ({blogId, imgName, imgAlt, imgCaption}) => {
+const Image = styled.img`
+    ${(props) => props.maxWidth ? `max-width: ${props.maxWidth}` : null}
+`
+
+const BlogImage = ({blogId, imgName, imgAlt, imgCaption, maxWidth}) => {
     let imgSrc = require(`../blogs/assets/${blogId}/${imgName}`);
     return (
         <Figure>
-            <img src={imgSrc} alt={imgAlt}/>
+            <Image src={imgSrc} alt={imgAlt} maxWidth={maxWidth}/>
             {imgCaption ? <Caption >{imgCaption}</Caption> : null}
         </Figure>
     );
