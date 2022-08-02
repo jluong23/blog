@@ -5,7 +5,7 @@ import BlogPost from "./pages/BlogPost";
 import "./styling.css";
 import BlogOverview from "./components/BlogOverview";
 import styled from "styled-components";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -14,10 +14,19 @@ const AppWrapper = styled.div`
 const ContentWrapper = styled.div`
   padding: 0.5em;
   height: 100%;
+  text-align: center;
 `
 
 
 const App = () => {
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+  });
+
   const [absoluteHeader, setAbsoluteHeader] = useState(false);
   return (
     <BrowserRouter basename="/blog">

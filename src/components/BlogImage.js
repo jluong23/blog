@@ -1,15 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import blogData from "../blogs/BlogData.json";
 
+const Caption = styled.figcaption`
+    font-style: italic;
+    font-size: 0.9em;
+    `
+
+const Figure = styled.figure`
+    text-align: center;
+`
 
 const BlogImage = ({blogId, imgName, imgAlt, imgCaption}) => {
     let imgSrc = require(`../blogs/assets/${blogId}/${imgName}`);
     return (
-        <figure>
+        <Figure>
             <img src={imgSrc} alt={imgAlt}/>
-            {imgCaption ? <figcaption >{imgCaption}</figcaption> : null}
-        </figure>
+            {imgCaption ? <Caption >{imgCaption}</Caption> : null}
+        </Figure>
     );
 };
 
