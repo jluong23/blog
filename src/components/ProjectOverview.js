@@ -19,13 +19,13 @@ const ProjectOverview = (props) => {
       <h1>Projects.</h1>
       <Projects>
         {projectData.map((project) => {
-          let imgFile = require("../assets/" + project["imgName"]);
+          let thumbnail = require("../projects/thumbnails/" + project["thumbnail"]);
           return (
             <Article 
               key={project["id"]}
               title={project["title"]} 
               description={project["description"]}
-              imgSrc={imgFile}
+              thumbnail={thumbnail}
               onClickUrl={project["onClickUrl"]}
             />
           )

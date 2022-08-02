@@ -23,10 +23,16 @@ const BlogOverview = (props) => {
       <Blogs>
         {blogData.map((blog) => {
           let url = "/posts/" + blog["id"];
-          let imgFile = require("../assets/" + blog["imgName"]);
-          
+          let thumbnail = require("../blogs/thumbnails/" + blog["thumbnail"]);
           return (
-            <Article key={blog["id"]} color={blog["color"]} title = {blog["title"]} description={blog["description"]} imgSrc={imgFile} onClickUrl={url}/>
+            <Article 
+              key={blog["id"]} 
+              color={blog["color"]} 
+              title = {blog["title"]} 
+              description={blog["description"]} 
+              thumbnail={thumbnail} 
+              onClickUrl={url}
+            />
           )
         })}
 

@@ -35,13 +35,13 @@ const ArticleImage = styled.img`
     }
 `
 
-const Article = ({color, title, description, imgSrc, onClickUrl}) => {
+const Article = ({color, title, description, thumbnail, onClickUrl}) => {
   return (
     <Wrapper color={color}>
       <Link to={onClickUrl}>
         <ArticleTitle>{title}</ArticleTitle>  
         <ArticleContent>
-          {imgSrc == null ?  <ArticleImage/> : <ArticleImage  src={imgSrc} />}
+          {thumbnail == null ?  <ArticleImage/> : <ArticleImage  src={thumbnail} />}
           <ArticleDescription>{description}</ArticleDescription>
         </ArticleContent>
       </Link>
