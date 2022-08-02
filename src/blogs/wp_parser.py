@@ -1,4 +1,4 @@
-# parses html from wordpress blogs, removing the class names. Assumes this script in the same directory where blogs are stored
+# parses html from wordpress blogs, removing the class names. Assumes this script in the same directory where the blog html file is stored
 # arg[1]: file name in src/blogs directory
 
 
