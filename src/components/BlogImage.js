@@ -7,10 +7,10 @@ const Caption = styled.figcaption`
     `
 
 const Figure = styled.figure`
-    text-align: center;
 `
 
 const Image = styled.img`
+    width: 100%;
     ${(props) => props.maxWidth ? `max-width: ${props.maxWidth}` : null}
 `
 

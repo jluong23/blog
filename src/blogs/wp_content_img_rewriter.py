@@ -1,5 +1,6 @@
-import sys
 import re
+
+# A script which replaces lines with <figure></figure> elements to BlogImage components into a .js
 
 file_name = "content.js"
 blog_id = "2"
@@ -9,7 +10,7 @@ edited_file_dir = "./assets/{}/content_new.js".format(blog_id)
 # NOTE: this pattern was used for blog_id = 2. The number 4 in the pattern is a workaround / shortcut, 
 # using the fact that the blog was written in 2020/04. to match the group correctly. 
 # For future blogs from wordpress, Check the regex to capture the correct group.
-pattern = "4\/(.*)(jpg|png)" #pattern for getting file name from url, will be 1st group
+pattern = "4\/(.*)(jpg|png|jpeg)" #pattern for getting file name from url, will be 1st group
 
 with open(file_dir, "r") as blog, open(edited_file_dir, "w+") as edited_blog:
     for line in blog.readlines():
