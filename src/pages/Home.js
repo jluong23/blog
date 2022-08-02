@@ -1,6 +1,6 @@
 // Home.js
 
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import BlogOverview from "../components/BlogOverview";
 import ProjectOverview from "../components/ProjectOverview";
@@ -50,8 +50,13 @@ const HomeScreen = () => {
 } 
 
 
-const Home = (props) => {
-
+const Home = ({setAbsoluteHeader}) => {
+  useEffect(() => {
+    setAbsoluteHeader(true);
+    return function cleanup(){
+      setAbsoluteHeader(false);
+    }
+  });
   return (
     <HomeWrapper>
       <HomeScreen />

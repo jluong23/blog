@@ -9,12 +9,12 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    position: ${(props) => props.path == "/blog" ? "absolute" : null};
+    position: ${(props) => props.absolutePosition ? "absolute" : "inline-block"};
     width: 100%;
 `
 const Header = (props) => {
   return (
-    <Wrapper path={window.location.pathname}>
+    <Wrapper absolutePosition={props.absoluteHeader}>
         <FontAwesomeIcon icon={faBars} size="lg"/>
         <Link to="/">
           <FontAwesomeIcon icon={faHome} size="lg"/>

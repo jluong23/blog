@@ -5,6 +5,7 @@ import BlogPost from "./pages/BlogPost";
 import "./styling.css";
 import BlogOverview from "./components/BlogOverview";
 import styled from "styled-components";
+import React, { useState } from "react";
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -15,14 +16,16 @@ const ContentWrapper = styled.div`
   height: 100%;
 `
 
+
 const App = () => {
+  const [absoluteHeader, setAbsoluteHeader] = useState(false);
   return (
     <BrowserRouter basename="/blog">
       <AppWrapper>
-        <Header />
+        <Header absoluteHeader={absoluteHeader}/>
         <ContentWrapper>
           <Routes>
-            <Route path="/" element={<Home />}/>
+            <Route path="/" element={<Home setAbsoluteHeader={setAbsoluteHeader}/>} />
             <Route path="/posts" element={<BlogOverview />} />
             <Route path="/posts/:blogId" element={<BlogPost />}/>
           </Routes>
