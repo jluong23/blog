@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import blog1 from "./assets/1/content";
 import blog2 from "./assets/2/content";
+import blog3 from "./assets/3/content";
 const Wrapper = styled.div`
 
   & figure {
@@ -11,13 +12,6 @@ const Wrapper = styled.div`
     max-width: 700px;
   }  
 
-  & p{
-    width: 70%;
-    text-align: center;
-    /* margin: 0; */
-    margin-right: auto;
-    margin-left: auto;
-  }
 
 `
 
@@ -25,7 +19,8 @@ function getBlogContent(id){
   let blogDict = 
   {
     1: blog1,
-    2: blog2
+    2: blog2,
+    3: blog3,
   }
   if(id in blogDict){
     return (

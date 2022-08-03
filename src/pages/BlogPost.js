@@ -1,6 +1,6 @@
 import {React} from "react";
 import { useParams } from "react-router-dom";
-import getBlogContent from "../blogs/Blogs";
+import getBlogContent from "../blogs/BlogGetter";
 import styled from "styled-components";
 import blogData from "../blogs/BlogData.json";
 const Wrapper = styled.div`

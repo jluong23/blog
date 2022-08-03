@@ -37,15 +37,12 @@ const ArticleContent = styled.div`
 
 const ArticleImage = styled.img`
   background-color: gray;
-  opacity: 50%;
+  opacity: 70%;
   width: 50%;
   max-width: 500px;
-  /* @media screen and (min-width: 1000px) {
-    width: 35%;
-  } */
 `
 
-const Article = ({color, title, description, thumbnail, onClickUrl}) => {
+const Article = ({variant, color, title, description, thumbnail, onClickUrl}) => {
   return (
     <Wrapper color={color}>
       <Link to={onClickUrl}>

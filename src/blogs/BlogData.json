@@ -12,5 +12,12 @@
         "title": "University of Sheffield – First Year Memories",
         "description": "My favourite memories of first year.",
         "thumbnail": "ktane.jpg" 
+    },
+    {
+        "id": 3,
+        "date": "2020/08/03",
+        "title": "Two Years in Chess - A Reflection",
+        "description": "Looking at my journey in chess.",
+        "thumbnail": "ktane.jpg" 
     }
 ]
