@@ -46,7 +46,7 @@ const BlogOverview = (props) => {
               title = {blog["title"]} 
               description={blog["description"]} 
               thumbnail={thumbnail} 
-              onClickUrl={url}
+              blogUrl={url}
             />
           )
         })}

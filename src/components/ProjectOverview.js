@@ -27,7 +27,7 @@ const ProjectOverview = (props) => {
               title={project["title"]} 
               description={project["description"]}
               thumbnail={thumbnail}
-              onClickUrl={project["onClickUrl"]}
+              projectUrls={project["projectUrls"]}
             />
           )
       })}        
