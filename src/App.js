@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 
 const AppWrapper = styled.div`
   height: 100%;
+  width: inherit;
 `
 
 const ContentWrapper = styled.div`

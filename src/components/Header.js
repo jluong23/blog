@@ -11,6 +11,7 @@ const Wrapper = styled.div`
     padding: 1em;
     position: ${(props) => props.absolutePosition ? "absolute" : "inline-block"};
     width: 100%;
+    min-width: 300px; //matches the body min width in styling.css
 `
 const Header = (props) => {
   return (

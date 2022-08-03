@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import BlogImage from "../../../components/BlogImage";
 import BlogGallery from "../../../components/BlogGallery";
 
