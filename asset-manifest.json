@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.631945d7.css",
-    "main.js": "/blog/static/js/main.48acf1fe.js",
+    "main.js": "/blog/static/js/main.df3e4efb.js",
     "static/media/img_20190923_094021457.jpg": "/blog/static/media/img_20190923_094021457.287774de2f39aa7ee32e.jpg",
     "static/media/img_20191002_171218010-copy.jpg": "/blog/static/media/img_20191002_171218010-copy.6e59ec8a7cbe501dba09.jpg",
     "static/media/received_606280930158746.jpeg": "/blog/static/media/received_606280930158746.8c40883a2e6415e0b121.jpeg",
@@ -38,6 +38,7 @@
     "static/media/img_20191002_175236450.jpg": "/blog/static/media/img_20191002_175236450.7516fd78cea08815cc98.jpg",
     "static/media/snapchat-1831123840.jpg": "/blog/static/media/snapchat-1831123840.4a21537cb0756202a8cf.jpg",
     "static/media/23.webp": "/blog/static/media/23.1299fbb240ab90837f0a.webp",
+    "static/media/qg.jpg": "/blog/static/media/qg.7ea991efd433935259ff.jpg",
     "static/media/john.png": "/blog/static/media/john.f28f5e25c88f2df2cf87.png",
     "static/media/chess.jpg": "/blog/static/media/chess.b21e62c9d81a41a3c1e4.jpg",
     "static/media/diss.png": "/blog/static/media/diss.56ff85ea059edfe76b70.png",
@@ -50,13 +51,14 @@
     "static/media/whatsapp-image-2020-04-12-at-10.48.26.jpeg": "/blog/static/media/whatsapp-image-2020-04-12-at-10.48.26.689b70ce63ff492af7ae.jpeg",
     "static/media/bg.png": "/blog/static/media/bg.f688a68c8cce4ca1521d.png",
     "static/media/snapchat-2130413755.jpg": "/blog/static/media/snapchat-2130413755.ab40ef0c11f498a0a259.jpg",
+    "static/media/chess_slap.jpeg": "/blog/static/media/chess_slap.2f6da426df4d41b99c1e.jpeg",
     "static/media/ratings-1.webp": "/blog/static/media/ratings-1.d51b8bbc96c6a139320e.webp",
     "index.html": "/blog/index.html",
     "main.631945d7.css.map": "/blog/static/css/main.631945d7.css.map",
-    "main.48acf1fe.js.map": "/blog/static/js/main.48acf1fe.js.map"
+    "main.df3e4efb.js.map": "/blog/static/js/main.df3e4efb.js.map"
   },
   "entrypoints": [
     "static/css/main.631945d7.css",
-    "static/js/main.48acf1fe.js"
+    "static/js/main.df3e4efb.js"
   ]
 }
