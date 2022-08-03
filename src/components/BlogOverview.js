@@ -10,20 +10,31 @@ const Wrapper = styled.div`
 
 const Blogs = styled.div`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   @media screen and (min-width: 800px) {
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 `
 
+function getLatestBlogs(blogs, n){
+  // gets n latest blogs, starting from most recent
+  let sortedBlogs = [...blogs]
+  sortedBlogs.sort(function(a,b){
+    return new Date(b["date"]) - new Date(a["date"]);
+  });
+  return sortedBlogs.slice(0, n);
+}
+
 const BlogOverview = (props) => {
+  const NUM_BLOGS_TO_RECEIVE = 3;
+  let recentBlogs = getLatestBlogs(blogData, NUM_BLOGS_TO_RECEIVE);
   return (
     <Wrapper>
       <h1>Blog.</h1>
       <Blogs>
-        {blogData.map((blog) => {
+        {recentBlogs.map((blog) => {
           let url = "/posts/" + blog["id"];
           let thumbnail = require("../blogs/thumbnails/" + blog["thumbnail"]);
           return (

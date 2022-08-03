@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import moment from "moment";
 
 const Wrapper = styled.article`
   padding-bottom: .3em;
@@ -51,7 +52,7 @@ const Article = ({variant, date, color, title, description, thumbnail, onClickUr
     <Wrapper color={color}>
       <Link to={onClickUrl}>
         <ArticleTitle>{title}</ArticleTitle>  
-        {date && <ArticleDate>{date}</ArticleDate>}
+        {date && <ArticleDate>{moment(date).format("MMMM Do YYYY")}</ArticleDate>}
         <ArticleContent>
           {thumbnail == null ?  <ArticleImage/> : <ArticleImage  src={thumbnail} />}
           <p>{description}</p>

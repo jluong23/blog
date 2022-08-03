@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import getBlogContent from "../blogs/BlogGetter";
 import styled from "styled-components";
 import blogData from "../blogs/BlogData.json";
+import moment from "moment";
 const Wrapper = styled.div`
   padding: .5em;
 `
@@ -20,7 +21,7 @@ const BlogPost = (props) => {
       <Wrapper>
       <BlogHeader>
         <h1>{blog.title}</h1>
-        <h2>{blog.date}</h2>
+        <h2>{moment(blog.date).format("MMMM Do YYYY")}</h2>
       </BlogHeader>
         {getBlogContent(blogId)}
       </Wrapper>
