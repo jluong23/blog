@@ -16,6 +16,10 @@ const ArticleTitle = styled.h2`
     padding-bottom: 1em;
 `
 
+const ArticleDate = styled.p`
+  font-style: italic;
+`
+
 const ArticleContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,11 +46,12 @@ const ArticleImage = styled.img`
   max-width: 500px;
 `
 
-const Article = ({variant, color, title, description, thumbnail, onClickUrl}) => {
+const Article = ({variant, date, color, title, description, thumbnail, onClickUrl}) => {
   return (
     <Wrapper color={color}>
       <Link to={onClickUrl}>
         <ArticleTitle>{title}</ArticleTitle>  
+        {date && <ArticleDate>{date}</ArticleDate>}
         <ArticleContent>
           {thumbnail == null ?  <ArticleImage/> : <ArticleImage  src={thumbnail} />}
           <p>{description}</p>

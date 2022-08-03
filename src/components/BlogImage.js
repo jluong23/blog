@@ -9,13 +9,31 @@ const Caption = styled.figcaption`
 const Figure = styled.figure`
 `
 
+const ErrorDiv = styled.div`
+    border: .1em solid red;
+    width: 35%;
+    height: 10em;
+    margin: auto;
+`
+
 const Image = styled.img`
     width: 100%;
     ${(props) => props.maxWidth ? `max-width: ${props.maxWidth}` : null}
-`
+    `
 
 const BlogImage = ({blogId, imgName, imgAlt, imgCaption, maxWidth}) => {
-    let imgSrc = require(`../blogs/assets/${blogId}/${imgName}`);
+    let imgSrc;
+    
+    try {
+        imgSrc = require(`../blogs/assets/${blogId}/${imgName}`);
+    } catch (error) {
+        imgSrc = "";
+        return (
+            <ErrorDiv>
+                Could not find {imgName} with blog id {blogId}
+            </ErrorDiv>
+        )
+    }
     return (
         <Figure>
             <Image src={imgSrc} alt={imgAlt} maxWidth={maxWidth}/>
