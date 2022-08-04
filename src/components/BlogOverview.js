@@ -16,6 +16,15 @@ const Blogs = styled.div`
   @media screen and (min-width: 1000px) {
     flex-direction: row;
   }
+
+  .article-image {
+    height: 300px;
+    & > img{
+      object-fit: contain;
+
+    }
+  }
+  
 `
 
 function getLatestBlogs(blogs, n){

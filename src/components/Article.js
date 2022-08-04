@@ -6,15 +6,23 @@ import moment from "moment";
 const Wrapper = styled.article`
   padding-bottom: .3em;
   margin: 1em 0;
+  flex: 1 1 0px;
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
 
   & a {
     text-decoration: none;
     color: inherit;
   }
+  .project-content{
+    @media screen and (min-width: 800px) {
+      flex-direction: row;
+    }
+  }
 `
 const ArticleTitle = styled.h2`
     text-align: center;
-    padding-bottom: 1em;
 `
 
 const ArticleDate = styled.p`
@@ -24,39 +32,45 @@ const ArticleDate = styled.p`
 const ArticleContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   padding: 1em;
-  /* article description */
-  & p {
-    padding: .5em;
-    width: 60%;
-    text-align: center;
-    max-width: 350px;
-  }
-
-  @media screen and (min-width: 500px) {
-    flex-direction: row;
+  height: 100%;
+  & > *{
+    margin: .5em;
   }
 `
 
-const ArticleImage = styled.img`
-  background-color: gray;
+const ArticleImage = styled.div`
   opacity: 70%;
-  width: 50%;
+  width: 75%;
   max-width: 500px;
+  & > img{
+    min-height: 200px;
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const ArticleDescription = styled.div`
-  font-size: 1.2em;
+  font-size: 1.3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-end;
+  margin: auto;
+  width: 50%;
   & p {
-    margin: auto;
+    width: 200%;
+    @media screen and (min-width: 800px) {
+      width: 100%;
+    }
   }
 `
 
 const ArticleLinks = styled.div`
-  & > * {
-    padding: 0 .2em;
+  & button {
+    margin: .5em;
+    top: 0;
   }
 `
 
@@ -91,8 +105,10 @@ const Article = ({variant, date, color, title, description, thumbnail, blogUrl, 
     <Wrapper color={color}>
       <ArticleTitle>{title}</ArticleTitle>  
       {date && <ArticleDate>{moment(date).format("MMMM Do YYYY")}</ArticleDate>}
-      <ArticleContent> {/* Wrapper for image, description and image */}
-        {thumbnail == null ?  <ArticleImage/> : <ArticleImage  src={thumbnail} />}
+      <ArticleContent className={variant+"-content"}> {/* Wrapper for image, description and image */}
+        <ArticleImage className="article-image">
+          {thumbnail == null ? <img /> : <img src={thumbnail} />}
+        </ArticleImage>
         <ArticleDescription> {/*Contains description and image*/}
           <p>{description}</p>
           {articleLinks()}
