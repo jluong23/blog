@@ -48,6 +48,7 @@ const ArticleImage = styled.img`
 `
 
 const ArticleDescription = styled.div`
+  font-size: 1.2em;
   & p {
     margin: auto;
   }
@@ -66,7 +67,7 @@ const Article = ({variant, date, color, title, description, thumbnail, blogUrl, 
       return (
         <ArticleLinks>
           <Link to={blogUrl}>
-            <button className="btn btn-primary">Read</button>
+            <button className="btn btn-primary btn-lg">Read</button>
           </Link>
         </ArticleLinks>
       );
@@ -76,7 +77,7 @@ const Article = ({variant, date, color, title, description, thumbnail, blogUrl, 
           {Object.keys(projectUrls).map((text) => {
             return (
               <a key={text} href={projectUrls[text]}>
-                <button className="btn btn-primary">{text}</button>
+                <button className="btn btn-primary btn-lg">{text}</button>
               </a>
             );
           })}

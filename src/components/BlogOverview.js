@@ -13,7 +13,7 @@ const Blogs = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1000px) {
     flex-direction: row;
   }
 `

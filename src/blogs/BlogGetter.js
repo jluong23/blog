@@ -6,16 +6,15 @@ const Wrapper = styled.div`
 
   & figure {
     width: 70%;
-    margin: 0;
     margin-left: auto;
     margin-right: auto;
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 1000px) {
       width: 50%;
-      max-width: 600px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 40%;
     }
   }  
-
-
 `
 
 function getBlogContent(id){

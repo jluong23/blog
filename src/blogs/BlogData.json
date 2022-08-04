@@ -3,7 +3,7 @@
         "id": 1,
         "date": "2020/08/24",
         "title": "My 'Shower of Blunders' Game",
-        "description": "Inspiration from Frank Marshall's 'Shower of Gold' match.",
+        "description": "Inspiration from Frank Marshall's 'Shower of Gold' game in 1912.",
         "thumbnail": "chess.jpg"
     },
     {
@@ -17,7 +17,7 @@
         "id": 3,
         "date": "2022/08/03",
         "title": "Two Years in Chess - A Reflection",
-        "description": "Looking at my journey in chess.",
+        "description": "Reflecting on my chess journey so far...",
         "thumbnail": "chess_slap.jpeg" 
     }
 ]
