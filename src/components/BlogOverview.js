@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Article from "./Article";
-import blogData from "../blogs/BlogData.json";
 
 const Wrapper = styled.div`
   background-color: darkgray;
@@ -25,19 +24,9 @@ const Blogs = styled.div`
   }
   
 `
-
-function getLatestBlogs(blogs, n){
-  // gets n latest blogs, starting from most recent
-  let sortedBlogs = [...blogs]
-  sortedBlogs.sort(function(a,b){
-    return new Date(b["date"]) - new Date(a["date"]);
-  });
-  return sortedBlogs.slice(0, n);
-}
-
-const BlogOverview = (props) => {
-  const NUM_BLOGS_TO_RECEIVE = 3;
-  let recentBlogs = getLatestBlogs(blogData, NUM_BLOGS_TO_RECEIVE);
+const NUM_BLOGS_TO_RECEIVE = 3;
+const BlogOverview = ({getLatestBlogs}) => {
+  let recentBlogs = getLatestBlogs(NUM_BLOGS_TO_RECEIVE);
   return (
     <Wrapper>
       <h1>Blog.</h1>

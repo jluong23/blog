@@ -6,7 +6,7 @@ import "./styling.css";
 import BlogOverview from "./components/BlogOverview";
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
-
+import blogData from "./blogs/BlogData.json";
 const AppWrapper = styled.div`
   height: 100%;
   width: inherit;
@@ -20,6 +20,15 @@ const ContentWrapper = styled.div`
 
 
 const App = () => {
+  
+  function getLatestBlogs(n){
+    // gets n latest blogs, starting from most recent
+    let sortedBlogs = [...blogData]
+    sortedBlogs.sort(function(a,b){
+      return new Date(b["date"]) - new Date(a["date"]);
+    });
+    return sortedBlogs.slice(0, n);
+  }
 
   useEffect(() => {
     window.scrollTo({
@@ -35,7 +44,7 @@ const App = () => {
         <Header absoluteHeader={absoluteHeader}/>
         <ContentWrapper>
           <Routes>
-            <Route path="/" element={<Home setAbsoluteHeader={setAbsoluteHeader}/>} />
+            <Route path="/" element={<Home setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs}/>} />
             <Route path="/posts" element={<BlogOverview />} />
             <Route path="/posts/:blogId" element={<BlogPost />}/>
           </Routes>

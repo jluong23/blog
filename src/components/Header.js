@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 const Header = (props) => {
   return (
     <Wrapper absolutePosition={props.absoluteHeader}>
-        <FontAwesomeIcon icon={faBars} size="lg"/>
+        <FontAwesomeIcon icon={faBars} size="lg" />
         <Link to="/">
           <FontAwesomeIcon icon={faHome} size="lg"/>
         </Link>

@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   height: 100%;
 `
 
-const HomeScreen = () => {
+const HomeScreen = ({getLatestBlogs}) => {
   const fadeInAnimation = useSpring({ 
     to: { opacity: 1 }, 
     from: { opacity: 0 },
@@ -44,13 +44,13 @@ const HomeScreen = () => {
             Hello, <br /> I'm James.
           </h1>
       </Title>
-      <About />
+      <About getLatestBlogs={getLatestBlogs}/>
     </Wrapper>
   ) 
 } 
 
 
-const Home = ({setAbsoluteHeader}) => {
+const Home = ({setAbsoluteHeader, getLatestBlogs}) => {
   useEffect(() => {
     setAbsoluteHeader(true);
     return function cleanup(){
@@ -59,9 +59,9 @@ const Home = ({setAbsoluteHeader}) => {
   });
   return (
     <HomeWrapper>
-      <HomeScreen />
+      <HomeScreen getLatestBlogs={getLatestBlogs}/>
       <ProjectOverview />
-      <BlogOverview />
+      <BlogOverview getLatestBlogs={getLatestBlogs}/>
     </HomeWrapper>
   );
 };
