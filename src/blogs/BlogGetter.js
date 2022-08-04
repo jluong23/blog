@@ -15,6 +15,13 @@ const Wrapper = styled.div`
       width: 40%;
     }
   }  
+
+  p{
+    margin: auto;
+    width: 90%;
+    @media screen and (min-width: 1200px) {
+    }
+  }
 `
 
 function getBlogContent(id){

@@ -4,18 +4,21 @@ import styled from "styled-components";
 import moment from "moment";
 
 const Wrapper = styled.article`
-  padding-bottom: .3em;
-  margin: 1em 0;
   flex: 1 1 0px;
-  /* flex: 1; */
+  height: 100%;
   display: flex;
   flex-direction: column;
-
   & a {
     text-decoration: none;
     color: inherit;
   }
   .project-content{
+    margin: 1em 0em;
+    justify-content: space-evenly;
+    & > *{
+      margin: 1em;
+    }
+    
     @media screen and (min-width: 800px) {
       flex-direction: row;
     }
@@ -33,11 +36,7 @@ const ArticleContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em;
   height: 100%;
-  & > *{
-    margin: .5em;
-  }
 `
 
 const ArticleImage = styled.div`
@@ -56,10 +55,9 @@ const ArticleDescription = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: flex-end;
-  margin: auto;
   width: 50%;
   & p {
+    margin-bottom: 0;
     width: 200%;
     @media screen and (min-width: 800px) {
       width: 100%;
@@ -68,9 +66,9 @@ const ArticleDescription = styled.div`
 `
 
 const ArticleLinks = styled.div`
+
   & button {
     margin: .5em;
-    top: 0;
   }
 `
 
