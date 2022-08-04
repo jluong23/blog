@@ -5,9 +5,11 @@ import blog3 from "./assets/3/content";
 const Wrapper = styled.div`
 
   & figure {
-    width: 70%;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (min-width: 800px) {
+      width: 60%;
+    }
     @media screen and (min-width: 1000px) {
       width: 50%;
     }

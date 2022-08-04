@@ -51,8 +51,11 @@ const Content = (
         <BlogGallery>
 	<BlogImage blogId={2} imgName="received_453842115265611.jpg" imgAlt=""/>
 	<BlogImage blogId={2} imgName="76756970_10215134694068011_2173026875071266816_n.png" imgAlt=""/>
+        </BlogGallery>
+        <BlogGallery>
 	<BlogImage blogId={2} imgName="received_606280930158746.jpeg" imgAlt=""/>
 	<BlogImage blogId={2} imgName="img_20200201_133500397_hdr.jpg" imgAlt=""/>
+
         </BlogGallery>
         <p>South Yorkshire XC at Kiveton Park and BUCS XC at Edinburgh. Energy of BUCS was mental (<a href="https://youtu.be/Qz-ASLchXfo">Mens A race start</a>), never forget the old guy who tripped and landed on the mud trying to cross over the barrier to spectate the quicker runners.</p>
 	<BlogImage blogId={2} imgName="img_20200211_094736457.jpg" imgAlt=""/>

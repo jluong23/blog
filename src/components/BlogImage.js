@@ -7,6 +7,7 @@ const Caption = styled.figcaption`
     `
 
 const Figure = styled.figure`
+    margin: 1em 0;
 `
 
 const ErrorDiv = styled.div`
