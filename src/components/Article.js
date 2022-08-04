@@ -13,12 +13,7 @@ const Wrapper = styled.article`
     color: inherit;
   }
   .project-content{
-    margin: 1em 0em;
     justify-content: space-evenly;
-    & > *{
-      margin: 1em;
-    }
-    
     @media screen and (min-width: 800px) {
       flex-direction: row;
     }
@@ -37,6 +32,8 @@ const ArticleContent = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
+  margin: 1em 0em;
+
 `
 
 const ArticleImage = styled.div`
@@ -44,7 +41,6 @@ const ArticleImage = styled.div`
   width: 75%;
   max-width: 500px;
   & > img{
-    min-height: 200px;
     width: 100%;
     height: 100%;
   }
@@ -55,13 +51,9 @@ const ArticleDescription = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
-  & p {
-    margin-bottom: 0;
-    width: 200%;
-    @media screen and (min-width: 800px) {
-      width: 100%;
-    }
+  width: 75%;
+  @media screen and (min-width: 800px) {
+    width: 50%;
   }
 `
 

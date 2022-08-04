@@ -18,10 +18,9 @@ const Blogs = styled.div`
   }
 
   .article-image {
-    height: 300px;
+    height: 15rem;
     & > img{
       object-fit: contain;
-
     }
   }
   
