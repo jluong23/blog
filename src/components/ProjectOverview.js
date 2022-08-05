@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Article from "./Article";
 import projectData from "../projects/projectData.json"
@@ -12,12 +12,11 @@ const Projects = styled.div`
   flex-direction: column;
 `
 
-const ProjectOverview = (props) => {
-
+const ProjectOverview = React.forwardRef((props, ref) => {
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <h1>Projects.</h1>
-      <Projects>
+      <Projects id="projects">
         {projectData.map((project) => {
           let thumbnail = require("../projects/thumbnails/" + project["thumbnail"]);
           return (
@@ -34,6 +33,6 @@ const ProjectOverview = (props) => {
       </Projects>
     </Wrapper>
   );
-};
+});
 
 export default ProjectOverview;

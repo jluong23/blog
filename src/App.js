@@ -29,8 +29,11 @@ const App = () => {
     });
     return sortedBlogs.slice(0, n);
   }
-
+  const scrollDown = (ref) => {
+    window.scroll({top: ref.current.getBoundingClientRect().top, behavior: "smooth"});
+  }
   useEffect(() => {
+    // scroll to top of page for each page
     window.scrollTo({
       top: 0,
       behavior: "instant"
@@ -44,7 +47,7 @@ const App = () => {
         <Header absoluteHeader={absoluteHeader}/>
         <ContentWrapper>
           <Routes>
-            <Route path="/" element={<Home setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs}/>} />
+            <Route path="/" element={<Home scrollDown={scrollDown} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs}/>} />
             <Route path="/posts" element={<BlogOverview />} />
             <Route path="/posts/:blogId" element={<BlogPost />}/>
           </Routes>

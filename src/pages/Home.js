@@ -1,12 +1,23 @@
 // Home.js
 
-import React, { useEffect } from "react";
+import React, { createRef, useEffect, useRef } from "react";
 import styled from "styled-components";
 import BlogOverview from "../components/BlogOverview";
 import ProjectOverview from "../components/ProjectOverview";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 import { useSpring, animated} from "react-spring";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleArrowDown} from "@fortawesome/free-solid-svg-icons";
 
+
+// styles
+const ScrollDownButton = styled.a`
+  margin-top: .5rem;
+  font-size: 2em;
+  &:hover{
+    cursor: pointer;
+  }
+`   
 
 const Title = styled.div`
     display: flex;
@@ -21,7 +32,7 @@ const HomeWrapper = styled.div`
     font-size: 2.8em;
   }
 `
-const Wrapper = styled.div`
+const HomeScreen = styled(animated.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +40,15 @@ const Wrapper = styled.div`
   height: 100%;
 `
 
-const HomeScreen = ({getLatestBlogs}) => {
+
+const Home = ({scrollDown, setAbsoluteHeader, getLatestBlogs}) => {
+  const projectRef = useRef();
+  useEffect(() => {
+    setAbsoluteHeader(true);
+    return function cleanup(){
+      setAbsoluteHeader(false);
+    }
+  });
   const fadeInAnimation = useSpring({ 
     to: { opacity: 1 }, 
     from: { opacity: 0 },
@@ -38,29 +57,20 @@ const HomeScreen = ({getLatestBlogs}) => {
     }
   });
   return (
-    <Wrapper as={animated.div} style={fadeInAnimation}>
-      <Title> 
-          <h1>
-            Hello, <br /> I'm James.
-          </h1>
-      </Title>
-      <SocialMediaIcons getLatestBlogs={getLatestBlogs}  />
-    </Wrapper>
-  ) 
-} 
-
-
-const Home = ({setAbsoluteHeader, getLatestBlogs}) => {
-  useEffect(() => {
-    setAbsoluteHeader(true);
-    return function cleanup(){
-      setAbsoluteHeader(false);
-    }
-  });
-  return (
     <HomeWrapper>
-      <HomeScreen getLatestBlogs={getLatestBlogs}/>
-      <ProjectOverview />
+      <HomeScreen style={fadeInAnimation}>
+        <Title> 
+            <h1>
+              Hello, <br /> I'm James.
+            </h1>
+        </Title>
+        <SocialMediaIcons getLatestBlogs={getLatestBlogs}  />
+        <ScrollDownButton onClick={() => {scrollDown(projectRef)}}>
+            <FontAwesomeIcon icon={faCircleArrowDown}/>
+        </ScrollDownButton>
+      </HomeScreen>
+      {/* content below home screen. Projects and blog overviews. */}
+      <ProjectOverview ref={projectRef}/>
       <BlogOverview getLatestBlogs={getLatestBlogs}/>
     </HomeWrapper>
   );
