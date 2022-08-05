@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import BlogOverview from "../components/BlogOverview";
 import ProjectOverview from "../components/ProjectOverview";
-import About from "../components/About";
+import SocialMediaIcons from "../components/SocialMediaIcons";
 import { useSpring, animated} from "react-spring";
 
 
@@ -44,7 +44,7 @@ const HomeScreen = ({getLatestBlogs}) => {
             Hello, <br /> I'm James.
           </h1>
       </Title>
-      <About getLatestBlogs={getLatestBlogs}/>
+      <SocialMediaIcons getLatestBlogs={getLatestBlogs}  />
     </Wrapper>
   ) 
 } 
