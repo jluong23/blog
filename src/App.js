@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
@@ -10,6 +10,7 @@ import React, { useEffect, useRef, useState } from "react";
 import blogData from "./blogs/BlogData.json";
 import NavigationMenu from "./components/NavigationMenu";
 import ScrollToTop from "./components/ScrollToTop";
+import About from "./pages/About";
 const AppWrapper = styled.div`
   height: 100%;
   width: inherit;
@@ -54,7 +55,7 @@ const App = () => {
   }
 
   const [navMenuFocus, setNavMenuFocus] = useState(false);
-  const [absoluteHeader, setAbsoluteHeader] = useState(true);
+  const [absoluteHeader, setAbsoluteHeader] = useState(false);
   return (
     <BrowserRouter basename="/blog">
       <ScrollToTop/>
@@ -67,6 +68,7 @@ const App = () => {
             <Route path="/posts" element={<BlogOverview getLatestBlogs={getLatestBlogs}/>} />
             <Route path="/posts/:blogId" element={<BlogPost />}/>
             <Route path="/projects" element={<ProjectOverview/>} />
+            <Route path="/about" element={<About/>} />
           </Routes>
         </ContentWrapper>
       </AppWrapper>

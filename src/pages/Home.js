@@ -1,13 +1,15 @@
 // Home.js
 
-import React, { createRef, useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import BlogOverview from "../components/BlogOverview";
 import ProjectOverview from "../components/ProjectOverview";
+import About from "./About";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 import { useSpring, animated} from "react-spring";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowDown, faCircleArrowUp} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 
 // styles
@@ -51,6 +53,8 @@ const HomeScreen = styled(animated.div)`
 const HomeContent = styled.div`
   & > *{
     margin: 3em 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 `
 
@@ -93,6 +97,9 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
       duration: 2000
     }
   });
+
+  let latestBlogUrl = "/posts/" + getLatestBlogs(1)[0].id;
+
   return (
     <HomeWrapper>
       <HomeScreen style={fadeInAnimation}>
@@ -101,7 +108,11 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
               Hello, <br /> I'm James.
             </h1>
         </Title>
-        <SocialMediaIcons getLatestBlogs={getLatestBlogs}  />
+        <p>Computer Science BSc Graduate from the University of Sheffield.</p>
+        <Link to={latestBlogUrl}>
+          <button className="btn btn-primary btn-lg">Read my latest blog</button>
+        </Link>
+        <SocialMediaIcons />
         <ScrollDownButton ref={scrollDownButtonRef} onClick={() => {scrollTo(projectRef); }}>
             <FontAwesomeIcon icon={faCircleArrowDown}/>
         </ScrollDownButton>
@@ -115,6 +126,7 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
       <HomeContent>
         <ProjectOverview ref={projectRef}/>
         <BlogOverview getLatestBlogs={getLatestBlogs}/>
+        <About/>
       </HomeContent>
     </HomeWrapper>
   );
