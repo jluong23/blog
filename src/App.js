@@ -36,18 +36,15 @@ const App = () => {
     return sortedBlogs.slice(0, n);
   }
 
-  const scrollDown = (ref) => {
-    window.scroll({top: ref.current.getBoundingClientRect().top, behavior: "smooth"});
+  // used by scroll buttons, ref can be 'top' or a ref to a DOM object
+  const scrollTo = (ref) => {
+    if(ref == "top"){
+      window.scrollTo({top: 0, behavior: "smooth"});
+    }else{
+      let y = ref.current.getBoundingClientRect().y +10;
+      window.scrollBy({top: y, behavior: "smooth"});
+    }
   }
-
-  // useEffect(() => {
-  //   // scroll to top of page for each page
-    
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "instant"
-  //   });
-  // }, []);
 
   const [navigationMenuFocus, setNavigationMenuFocus] = useState(false);
   const [absoluteHeader, setAbsoluteHeader] = useState(true);
@@ -59,7 +56,7 @@ const App = () => {
         <NavigationMenu navigationMenuFocus={navigationMenuFocus} setNavigationMenuFocus={setNavigationMenuFocus} ref={refs.navMenuRef}/>
         <ContentWrapper>
           <Routes>
-            <Route path="/" element={<Home scrollDown={scrollDown} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs.projectRef}/>} />
+            <Route path="/" element={<Home scrollTo={scrollTo} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs.projectRef}/>} />
             <Route path="/posts" element={<BlogOverview />} />
             <Route path="/posts/:blogId" element={<BlogPost />}/>
           </Routes>
