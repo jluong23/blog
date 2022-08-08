@@ -28,7 +28,7 @@ const Header = ({absoluteHeader, setNavMenuFocus}) => {
         <Link to="/">
           <FontAwesomeIcon icon={faHome} size="lg"/>
         </Link>
-        <FontAwesomeIcon icon={faMagnifyingGlass} size="lg"/>
+        <FontAwesomeIcon icon={faMagnifyingGlass} visibility="hidden" size="lg"/>
     </Wrapper>
   );
 };
