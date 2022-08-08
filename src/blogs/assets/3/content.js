@@ -56,6 +56,7 @@ const Content = (
             The games were always so stupid after a few drinks, but it got to the point where I was sobering up, the sun was coming back up and we were playing decent chess again.
         </p>
         <BlogImage blogId={3} imgName="su.jpg" imgAlt="" maxWidth={"500px"} imgCaption="Chess in front of Sheffield SU, June 2022. Don't have any pictures from 2021, so imagine this with more people!"/>
+        <BlogImage blogId={3} imgName="traf.jpg" imgAlt="" maxWidth={"500px"} imgCaption="ChessFest at Trafalgar Square"/>
         <p>
             My third year came around in September 2021 and was now part of the University Chess Society Committee as Team Captain. The first chess meetup was so ridiculous. We expected a huge 
             turnout from the new mailing list and bought loads of sets in anticipation. It still wasn't enough. The room was packed and we were scrambling for spare chess sets and seats. 
@@ -78,7 +79,7 @@ const Content = (
             walking around the room rather than thinking about the position.
         </p>
         <BlogImage blogId={3} imgName="b_team.jpg" imgAlt="" imgCaption="Our B Team (who won their division) vs Woodseats"/>
-        <BlogImage blogId={3} imgName="bham.jpg" imgAlt="" imgCaption="Friendly University Rapid Tournament in Birmingham."/>
+        <BlogImage blogId={3} imgName="bham2.jpg" imgAlt="" imgCaption="Friendly University Rapid Tournament in Birmingham."/>
 
         <p>
             Chess at university has been a good experience. I've met some good friends through the game and a few things about myself too regarding
