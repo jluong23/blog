@@ -5,8 +5,9 @@ import BlogPost from "./pages/BlogPost";
 import "./styling.css";
 import BlogOverview from "./components/BlogOverview";
 import styled from "styled-components";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import blogData from "./blogs/BlogData.json";
+import NavigationMenu from "./components/NavigationMenu";
 const AppWrapper = styled.div`
   height: 100%;
   width: inherit;
@@ -20,7 +21,11 @@ const ContentWrapper = styled.div`
 
 
 const App = () => {
-  
+  const refs = {
+    projectRef: useRef(),
+    navMenuRef: useRef(),
+  }
+
   function getLatestBlogs(n){
     // gets n latest blogs, starting from most recent
     let sortedBlogs = [...blogData]
@@ -29,9 +34,11 @@ const App = () => {
     });
     return sortedBlogs.slice(0, n);
   }
+
   const scrollDown = (ref) => {
     window.scroll({top: ref.current.getBoundingClientRect().top, behavior: "smooth"});
   }
+
   useEffect(() => {
     // scroll to top of page for each page
     window.scrollTo({
@@ -40,14 +47,16 @@ const App = () => {
     });
   });
 
-  const [absoluteHeader, setAbsoluteHeader] = useState(false);
+  const [navigationMenuFocus, setNavigationMenuFocus] = useState(false);
+  const [absoluteHeader, setAbsoluteHeader] = useState(true);
   return (
     <BrowserRouter basename="/blog">
       <AppWrapper>
-        <Header absoluteHeader={absoluteHeader}/>
+        <Header absoluteHeader={absoluteHeader} setNavigationMenuFocus={setNavigationMenuFocus}/>
+        <NavigationMenu navigationMenuFocus={navigationMenuFocus} setNavigationMenuFocus={setNavigationMenuFocus} ref={refs.navMenuRef}/>
         <ContentWrapper>
           <Routes>
-            <Route path="/" element={<Home scrollDown={scrollDown} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs}/>} />
+            <Route path="/" element={<Home scrollDown={scrollDown} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs.projectRef}/>} />
             <Route path="/posts" element={<BlogOverview />} />
             <Route path="/posts/:blogId" element={<BlogPost />}/>
           </Routes>

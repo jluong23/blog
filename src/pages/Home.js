@@ -14,6 +14,8 @@ import { faCircleArrowDown} from "@fortawesome/free-solid-svg-icons";
 const ScrollDownButton = styled.a`
   margin-top: .5rem;
   font-size: 2em;
+  position: absolute;
+  bottom: 1em;
   &:hover{
     cursor: pointer;
   }
@@ -41,8 +43,8 @@ const HomeScreen = styled(animated.div)`
 `
 
 
-const Home = ({scrollDown, setAbsoluteHeader, getLatestBlogs}) => {
-  const projectRef = useRef();
+const Home = React.forwardRef(({scrollDown, setAbsoluteHeader, getLatestBlogs}, projectRef) => {
+  
   useEffect(() => {
     setAbsoluteHeader(true);
     return function cleanup(){
@@ -74,6 +76,6 @@ const Home = ({scrollDown, setAbsoluteHeader, getLatestBlogs}) => {
       <BlogOverview getLatestBlogs={getLatestBlogs}/>
     </HomeWrapper>
   );
-};
+});
 
 export default Home;

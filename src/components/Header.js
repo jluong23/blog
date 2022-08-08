@@ -9,14 +9,22 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    position: ${(props) => props.absolutePosition ? "absolute" : "inline-block"};
+    position: ${(props) => props.absolutePosition ? "absolute" : "relative"};
     width: 100%;
     min-width: 300px; //matches the body min width in styling.css
+    `
+const HamburgerIcon = styled.span`
+  &:hover{
+    cursor: pointer;
+  }
 `
-const Header = (props) => {
+const Header = ({absoluteHeader, setNavigationMenuFocus}) => {
+
   return (
-    <Wrapper absolutePosition={props.absoluteHeader}>
-        <FontAwesomeIcon icon={faBars} size="lg" />
+    <Wrapper absolutePosition={absoluteHeader}>
+        <HamburgerIcon onClick={() => {setNavigationMenuFocus(true)}}>
+          <FontAwesomeIcon icon={faBars} size="lg"/>
+        </HamburgerIcon>
         <Link to="/">
           <FontAwesomeIcon icon={faHome} size="lg"/>
         </Link>
