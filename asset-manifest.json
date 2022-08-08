@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/blog/static/css/main.631945d7.css",
-    "main.js": "/blog/static/js/main.de86beed.js",
+    "main.css": "/blog/static/css/main.b7f1e145.css",
+    "main.js": "/blog/static/js/main.e0326392.js",
     "static/media/img_20190923_094021457.jpg": "/blog/static/media/img_20190923_094021457.287774de2f39aa7ee32e.jpg",
     "static/media/img_20191002_171218010-copy.jpg": "/blog/static/media/img_20191002_171218010-copy.6e59ec8a7cbe501dba09.jpg",
     "static/media/received_606280930158746.jpeg": "/blog/static/media/received_606280930158746.8c40883a2e6415e0b121.jpeg",
@@ -63,11 +63,11 @@
     "static/media/chess_slap.jpeg": "/blog/static/media/chess_slap.2f6da426df4d41b99c1e.jpeg",
     "static/media/ratings-1.webp": "/blog/static/media/ratings-1.d51b8bbc96c6a139320e.webp",
     "index.html": "/blog/index.html",
-    "main.631945d7.css.map": "/blog/static/css/main.631945d7.css.map",
-    "main.de86beed.js.map": "/blog/static/js/main.de86beed.js.map"
+    "main.b7f1e145.css.map": "/blog/static/css/main.b7f1e145.css.map",
+    "main.e0326392.js.map": "/blog/static/js/main.e0326392.js.map"
   },
   "entrypoints": [
-    "static/css/main.631945d7.css",
-    "static/js/main.de86beed.js"
+    "static/css/main.b7f1e145.css",
+    "static/js/main.e0326392.js"
   ]
 }
