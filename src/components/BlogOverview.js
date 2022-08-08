@@ -4,6 +4,9 @@ import Article from "./Article";
 
 const Wrapper = styled.div`
   background-color: darkgray;
+  @media screen and (min-width: 1200px) {
+      width: 75%;
+  }
 `
 
 const Blogs = styled.div`
@@ -32,7 +35,7 @@ const BlogOverview = ({getLatestBlogs}) => {
       <Blogs>
         {recentBlogs.map((blog) => {
           let url = "/posts/" + blog["id"];
-          let thumbnail = require("../blogs/thumbnails/" + blog["thumbnail"]);
+          let thumbnail = require(`../blogs/assets/${blog["id"]}/${blog["thumbnail"]}`);
           return (
             <Article 
               variant="blog"

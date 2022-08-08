@@ -8,6 +8,7 @@ const Wrapper = styled.article`
   height: 100%;
   display: flex;
   flex-direction: column;
+
   & a {
     text-decoration: none;
     color: inherit;

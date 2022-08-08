@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   & a{
     text-decoration: none;
   }
-  width: 75%;
   margin-left: auto;
   margin-right: auto; 
   max-width: 1000px;
@@ -39,7 +38,7 @@ const Info = styled.div`
 
 const DisplayPicture = styled.div`
   & img {
-    width: 75%;
+    width: 65%;
     object-fit: cover;
   }
   @media screen and (min-width: 800px) {

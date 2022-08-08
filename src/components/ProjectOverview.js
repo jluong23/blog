@@ -5,6 +5,9 @@ import projectData from "../projects/projectData.json"
 
 const Wrapper = styled.div`
   background-color: darkgray;
+  @media screen and (min-width: 1200px) {
+      width: 75%;
+  }
 `
 
 const Projects = styled.div`
