@@ -12,10 +12,9 @@ import { faCircleArrowDown, faCircleArrowUp} from "@fortawesome/free-solid-svg-i
 
 // styles
 const ScrollDownButton = styled.a`
-  margin-top: .5rem;
   font-size: 2em;
   position: absolute;
-  bottom: 1em;
+  bottom: .5em;
   &:hover{
     cursor: pointer;
   }

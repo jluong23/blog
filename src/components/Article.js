@@ -47,7 +47,7 @@ const ArticleImage = styled.div`
 `
 
 const ArticleDescription = styled.div`
-  font-size: 1.3em;
+  font-size: 1.1em;
   display: flex;
   flex-direction: column;
   align-items: center;
