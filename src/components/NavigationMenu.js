@@ -3,9 +3,11 @@ import styled from "styled-components";
 import {  Link } from "react-router-dom";
 
 const Wrapper = styled.div`
-  position: absolute;
-  background-color: darkgray;
+  position: fixed;
+  background-color: gray;
   height: 100%;
+  top: 0;
+  z-index: 10;
 `
 
 const MenuItems = styled.ul`

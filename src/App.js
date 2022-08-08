@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
@@ -8,6 +8,7 @@ import styled from "styled-components";
 import React, { useEffect, useRef, useState } from "react";
 import blogData from "./blogs/BlogData.json";
 import NavigationMenu from "./components/NavigationMenu";
+import ScrollToTop from "./components/ScrollToTop";
 const AppWrapper = styled.div`
   height: 100%;
   width: inherit;
@@ -39,18 +40,20 @@ const App = () => {
     window.scroll({top: ref.current.getBoundingClientRect().top, behavior: "smooth"});
   }
 
-  useEffect(() => {
-    // scroll to top of page for each page
-    window.scrollTo({
-      top: 0,
-      behavior: "instant"
-    });
-  });
+  // useEffect(() => {
+  //   // scroll to top of page for each page
+    
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "instant"
+  //   });
+  // }, []);
 
   const [navigationMenuFocus, setNavigationMenuFocus] = useState(false);
   const [absoluteHeader, setAbsoluteHeader] = useState(true);
   return (
     <BrowserRouter basename="/blog">
+      <ScrollToTop/>
       <AppWrapper>
         <Header absoluteHeader={absoluteHeader} setNavigationMenuFocus={setNavigationMenuFocus}/>
         <NavigationMenu navigationMenuFocus={navigationMenuFocus} setNavigationMenuFocus={setNavigationMenuFocus} ref={refs.navMenuRef}/>
