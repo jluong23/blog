@@ -14,9 +14,9 @@ const Projects = styled.div`
 
 const ProjectOverview = React.forwardRef((props, ref) => {
   return (
-    <Wrapper ref={ref}>
+    <Wrapper ref={ref} id="projects">
       <h1>Projects.</h1>
-      <Projects id="projects">
+      <Projects>
         {projectData.map((project) => {
           let thumbnail = require("../projects/thumbnails/" + project["thumbnail"]);
           return (

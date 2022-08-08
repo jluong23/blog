@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    position: ${(props) => props.absolutePosition ? "absolute" : "relative"};
+    position: ${(props) => props.absolutePosition ? "absolute" : "fixed"};
     width: 100%;
     min-width: 300px; //matches the body min width in styling.css
     `
@@ -18,11 +18,11 @@ const HamburgerIcon = styled.span`
     cursor: pointer;
   }
 `
-const Header = ({absoluteHeader, setNavigationMenuFocus}) => {
+const Header = ({absoluteHeader, setNavMenuFocus}) => {
 
   return (
     <Wrapper absolutePosition={absoluteHeader}>
-        <HamburgerIcon onClick={() => {setNavigationMenuFocus(true)}}>
+        <HamburgerIcon onClick={() => {setNavMenuFocus(true)}}>
           <FontAwesomeIcon icon={faBars} size="lg"/>
         </HamburgerIcon>
         <Link to="/">

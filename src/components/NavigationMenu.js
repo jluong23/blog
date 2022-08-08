@@ -8,26 +8,43 @@ const Wrapper = styled.div`
   height: 100%;
   top: 0;
   z-index: 10;
-`
+  width: fit-content;
+  `
 
-const MenuItems = styled.ul`
-  list-style: none;
-  padding: 0 1em;
+const MenuItems = styled.div`
+  display: flex;
+  flex-direction: column;
   font-size: 1.5em;
-  & li {
-    margin: 1em 0;
+  & a {
+    padding: 0 .5em;
+    margin: .3em 0;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+  }
+  & a:hover {
+    background-color: darkgray;
   }
 `
 
-const itemName = ["Home", "Projects", "Blog", "About"];
+const itemNames = {
+  "Home": "/",
+  "Projects": "/projects",
+  "Blog": "/posts",
+  "About": "/about"
+};
+
+
+
 const NavigationMenu = React.forwardRef((props, ref) => {
+  const {navMenuRef} = ref;
+  const closeNavMenu = (e) => {
+    if(navMenuRef.current && props.navMenuFocus && !navMenuRef.current.contains(e.target)){
+      props.setNavMenuFocus(false);
+    }
+  }
     useEffect(() => {
       // when the user clicks off nav bar whilst open, close nav bar
-      function closeNavMenu(e){
-        if(ref.current && props.navigationMenuFocus && !ref.current.contains(e.target)){
-          props.setNavigationMenuFocus(false);
-        }
-      }
       // Bind the event listener
       document.addEventListener("mousedown", closeNavMenu);
       // cleanup, remove listener for listener
@@ -35,11 +52,16 @@ const NavigationMenu = React.forwardRef((props, ref) => {
     });
 
   return (
-    props.navigationMenuFocus &&
-    <Wrapper ref={ref}>
+    props.navMenuFocus &&
+    <Wrapper ref={navMenuRef}>
       <MenuItems>
-          {itemName.map((item) => {
-            return <li key={item}>{item}</li>
+          {Object.keys(itemNames).map((item) => {
+            let url = itemNames[item]
+            return (
+              <Link to={url} key={item} onClick={() => {props.setNavMenuFocus(false)}}>
+                {item}
+              </Link>
+            )
           })}
       </MenuItems>
     </Wrapper>

@@ -24,8 +24,8 @@ const ScrollDownButton = styled.a`
 const ScrollUpArrow = styled.span`
     font-size: 2em;
     position: fixed;
-    top: 0;
-    left: 1em;
+    top: .2em;
+    left: .5em;
     z-index: 10;
 
     &:hover{
@@ -41,10 +41,6 @@ const Title = styled.div`
   `
 const HomeWrapper = styled.div`
   height: 100%;
-  
-  & h1 {
-    font-size: 2.8em;
-  }
 `
 const HomeScreen = styled(animated.div)`
   display: flex;
@@ -53,9 +49,14 @@ const HomeScreen = styled(animated.div)`
   justify-content: center;
   height: 100%;
 `
+const HomeContent = styled.div`
+  & > *{
+    margin: 3em 0;
+  }
+`
 
-
-const Home = React.forwardRef(({scrollTo, setAbsoluteHeader, getLatestBlogs}, projectRef) => {
+const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, getLatestBlogs}, ref) => {
+  const {projectRef, scrollDownButtonRef} = ref;
   // track the scroll y position of page, relative to projectRef
   const [scrollYProject, setscrollYProject] = useState(0);
   const [scrollUpArrow, setScrollUpArrow] = useState(false);
@@ -74,9 +75,12 @@ const Home = React.forwardRef(({scrollTo, setAbsoluteHeader, getLatestBlogs}, pr
     }
   });
 
+  // show scroll up arrow when document y pos is below projects
+  // also hide nav menu if its open
   useEffect(() => {
     if(scrollYProject < 0){
       setScrollUpArrow(true);
+      setNavMenuFocus(false);
     } 
     else{
       setScrollUpArrow(false);
@@ -99,7 +103,7 @@ const Home = React.forwardRef(({scrollTo, setAbsoluteHeader, getLatestBlogs}, pr
             </h1>
         </Title>
         <SocialMediaIcons getLatestBlogs={getLatestBlogs}  />
-        <ScrollDownButton onClick={() => {scrollTo(projectRef); }}>
+        <ScrollDownButton ref={scrollDownButtonRef} onClick={() => {scrollTo(projectRef); }}>
             <FontAwesomeIcon icon={faCircleArrowDown}/>
         </ScrollDownButton>
       </HomeScreen>
@@ -109,9 +113,10 @@ const Home = React.forwardRef(({scrollTo, setAbsoluteHeader, getLatestBlogs}, pr
             <FontAwesomeIcon icon={faCircleArrowUp}/>
       </ScrollUpArrow>
       }
-      
-      <ProjectOverview ref={projectRef}/>
-      <BlogOverview getLatestBlogs={getLatestBlogs}/>
+      <HomeContent>
+        <ProjectOverview ref={projectRef}/>
+        <BlogOverview getLatestBlogs={getLatestBlogs}/>
+      </HomeContent>
     </HomeWrapper>
   );
 });

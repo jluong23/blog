@@ -4,7 +4,6 @@ import Article from "./Article";
 
 const Wrapper = styled.div`
   background-color: darkgray;
-  margin-top: 5em;
 `
 
 const Blogs = styled.div`
@@ -28,7 +27,7 @@ const NUM_BLOGS_TO_RECEIVE = 3;
 const BlogOverview = ({getLatestBlogs}) => {
   let recentBlogs = getLatestBlogs(NUM_BLOGS_TO_RECEIVE);
   return (
-    <Wrapper>
+    <Wrapper id="blog">
       <h1>Blog.</h1>
       <Blogs>
         {recentBlogs.map((blog) => {

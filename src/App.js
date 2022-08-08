@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
 import "./styling.css";
 import BlogOverview from "./components/BlogOverview";
+import ProjectOverview from "./components/ProjectOverview";
 import styled from "styled-components";
 import React, { useEffect, useRef, useState } from "react";
 import blogData from "./blogs/BlogData.json";
@@ -25,7 +26,13 @@ const App = () => {
   const refs = {
     projectRef: useRef(),
     navMenuRef: useRef(),
+    scrollDownButtonRef: useRef(),
   }
+
+  // // used to print refs when updated
+  // useEffect(() => {
+  //   console.log(refs);
+  // }, [refs])
 
   function getLatestBlogs(n){
     // gets n latest blogs, starting from most recent
@@ -41,24 +48,25 @@ const App = () => {
     if(ref == "top"){
       window.scrollTo({top: 0, behavior: "smooth"});
     }else{
-      let y = ref.current.getBoundingClientRect().y +10;
+      let y = ref.current.getBoundingClientRect().y + 1;
       window.scrollBy({top: y, behavior: "smooth"});
     }
   }
 
-  const [navigationMenuFocus, setNavigationMenuFocus] = useState(false);
+  const [navMenuFocus, setNavMenuFocus] = useState(false);
   const [absoluteHeader, setAbsoluteHeader] = useState(true);
   return (
     <BrowserRouter basename="/blog">
       <ScrollToTop/>
       <AppWrapper>
-        <Header absoluteHeader={absoluteHeader} setNavigationMenuFocus={setNavigationMenuFocus}/>
-        <NavigationMenu navigationMenuFocus={navigationMenuFocus} setNavigationMenuFocus={setNavigationMenuFocus} ref={refs.navMenuRef}/>
+        <Header absoluteHeader={absoluteHeader} setNavMenuFocus={setNavMenuFocus}/>
+        <NavigationMenu navMenuFocus={navMenuFocus} setNavMenuFocus={setNavMenuFocus} ref={refs}/>
         <ContentWrapper>
           <Routes>
-            <Route path="/" element={<Home scrollTo={scrollTo} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs.projectRef}/>} />
-            <Route path="/posts" element={<BlogOverview />} />
+            <Route path="/" element={<Home setNavMenuFocus={setNavMenuFocus} scrollTo={scrollTo} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs}/>} />
+            <Route path="/posts" element={<BlogOverview getLatestBlogs={getLatestBlogs}/>} />
             <Route path="/posts/:blogId" element={<BlogPost />}/>
+            <Route path="/projects" element={<ProjectOverview/>} />
           </Routes>
         </ContentWrapper>
       </AppWrapper>
