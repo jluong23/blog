@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    position: ${(props) => props.absolutePosition ? "absolute" : "fixed"};
+    position: ${(props) => props.absolutePosition ? "absolute" : "relative"};
     width: 100%;
     min-width: 300px; //matches the body min width in styling.css
     `
