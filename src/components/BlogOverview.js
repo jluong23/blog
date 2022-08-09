@@ -92,6 +92,7 @@ const BlogOverview = ({getLatestBlogs, numBlogs, title, useCategoryFilter, blogC
   return (
     <Wrapper id="blog">
       {title ? <h1>{title}</h1> : HOME_TITLE}
+      <hr/>
       {useCategoryFilter && (
         <CategoryFiltersWrapper id="category-filters">
           {categoryFilters}

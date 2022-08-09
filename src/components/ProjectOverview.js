@@ -30,6 +30,7 @@ const ProjectOverview = React.forwardRef(({title, projectIds}, ref) => {
   return (
     <Wrapper ref={ref} id="projects">
       {title ? <h1>{title}</h1> : HOME_TITLE}
+      <hr/>
       <Projects>
         {projectsToShow.map((project) => {
           let thumbnail = require("../projects/thumbnails/" + project["thumbnail"]);

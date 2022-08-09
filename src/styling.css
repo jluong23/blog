@@ -8,6 +8,9 @@ body {
 body h1 {
     font-size: 2em;
 }
+hr{
+    height: 3px !important;
+}
 
 #root{
     height: 100%;

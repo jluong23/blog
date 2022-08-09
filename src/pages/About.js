@@ -25,9 +25,6 @@ const InfoWrapper = styled.div`
 `
 const Info = styled.div`
   padding: 1em;
-  & hr {
-    height: 3px;
-  }
   @media screen and (min-width: 800px) {
     flex-direction: row;
     width: 50%;
