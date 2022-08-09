@@ -69,6 +69,7 @@ const BlogCategories = styled.div`
   display: flex;
   justify-content: center;
   & > * {
+    color: inherit;
     margin: 0 .2em;
   }
 `
