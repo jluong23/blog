@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import {  Link } from "react-router-dom";
+import { useSpring, animated, config } from "react-spring";
 
-const Wrapper = styled.div`
+const Wrapper = styled(animated.div)`
   position: fixed;
   background-color: gray;
   height: 100%;
@@ -38,13 +39,23 @@ const itemNames = {
 
 const NavigationMenu = React.forwardRef((props, ref) => {
   const {navMenuRef} = ref;
+
+  const slideInAnimation = useSpring({ 
+    config: {...config.slow},
+    from: {marginLeft: -150},
+    to: {
+      marginLeft: props.navMenuFocus ? 0 : -150,
+    }
+
+  });
+
   const closeNavMenu = (e) => {
+    // when the user clicks off nav bar whilst open, close nav bar
     if(navMenuRef.current && props.navMenuFocus && !navMenuRef.current.contains(e.target)){
       props.setNavMenuFocus(false);
     }
   }
     useEffect(() => {
-      // when the user clicks off nav bar whilst open, close nav bar
       // Bind the event listener
       document.addEventListener("mousedown", closeNavMenu);
       // cleanup, remove listener for listener
@@ -52,8 +63,7 @@ const NavigationMenu = React.forwardRef((props, ref) => {
     });
 
   return (
-    props.navMenuFocus &&
-    <Wrapper ref={navMenuRef}>
+    <Wrapper style={slideInAnimation} ref={navMenuRef}>
       <MenuItems>
           {Object.keys(itemNames).map((item) => {
             let url = itemNames[item]

@@ -6,14 +6,13 @@ import BlogOverview from "../components/BlogOverview";
 import ProjectOverview from "../components/ProjectOverview";
 import About from "./About";
 import SocialMediaIcons from "../components/SocialMediaIcons";
-import { useSpring, animated} from "react-spring";
+import { useSpring, animated, config} from "react-spring";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowDown, faCircleArrowUp} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-
 // styles
-const ScrollDownButton = styled.a`
+const ScrollDownButton = styled(animated.a)`
   font-size: 2em;
   position: absolute;
   bottom: .5em;
@@ -63,6 +62,16 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
   // track the scroll y position of page, relative to projectRef
   const [scrollYProject, setscrollYProject] = useState(0);
   const [scrollUpArrow, setScrollUpArrow] = useState(false);
+  const [scrollDownArrowAnimation, setScrollDownArrowAnimation] = useState(true);
+  const fadeInAnimation = useSpring({ 
+    to: { opacity: 1 }, 
+    from: { opacity: 0 },
+    config: {
+      duration: 2000
+    }
+  });
+
+
   useEffect(() => {
     function listenToScroll(){
       setscrollYProject(projectRef.current.getBoundingClientRect().y);
@@ -90,14 +99,6 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
     }
   }, [scrollYProject]);
 
-  const fadeInAnimation = useSpring({ 
-    to: { opacity: 1 }, 
-    from: { opacity: 0 },
-    config: {
-      duration: 2000
-    }
-  });
-
   let latestBlogUrl = "/posts/" + getLatestBlogs(1)[0].id;
 
   return (
@@ -113,7 +114,7 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
           <button className="btn btn-primary btn-lg">Read my latest blog</button>
         </Link>
         <SocialMediaIcons />
-        <ScrollDownButton onClick={() => {scrollTo(projectRef); }}>
+        <ScrollDownButton onClick={() => {scrollTo(projectRef); setScrollDownArrowAnimation(!scrollDownArrowAnimation)}}>
             <FontAwesomeIcon icon={faCircleArrowDown}/>
         </ScrollDownButton>
       </HomeScreen>

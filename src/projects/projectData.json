@@ -13,7 +13,7 @@
     {
         "id": 2,
         "title": "COM3610 Dissertation Project - VR API Driven Interface",
-        "description": "Project for final year dissertation, creating a VR application to view a user's Google Photos images.", 
+        "description": "Project for third year undergraduate dissertation, creating a VR application to view a user's Google Photos images. Built using Unity and XR Interaction Toolkit.", 
         "thumbnail": "diss.png",
         "projectUrls": 
             {
