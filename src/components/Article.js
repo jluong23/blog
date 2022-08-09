@@ -65,8 +65,16 @@ const ArticleLinks = styled.div`
   }
 `
 
+const BlogCategories = styled.div`
+  display: flex;
+  justify-content: center;
+  & > * {
+    margin: 0 .2em;
+  }
+`
 
-const Article = ({variant, date, color, title, description, thumbnail, blogUrl, projectUrls}) => {
+
+const Article = ({variant, date, color, title, description, thumbnail, blogCategories, blogUrl, projectUrls}) => {
   let articleLinks = () => {
     if(variant == "blog" && blogUrl){
       return (
@@ -92,10 +100,28 @@ const Article = ({variant, date, color, title, description, thumbnail, blogUrl, 
     return null;
   }
 
+  // list of categories for each blog post
+  let blogCategoriesContent;
+  if(variant == 'blog' && blogCategories && blogCategories.length > 0){
+    blogCategoriesContent = blogCategories.map((category) => {
+      return (
+        <span key={category} className="badge bg-warning">
+          {category}
+        </span>
+      );
+    });
+  }
+
+
   return (
     <Wrapper color={color}>
       <ArticleTitle>{title}</ArticleTitle>  
       {date && <ArticleDate>{moment(date).format("MMMM Do YYYY")}</ArticleDate>}
+      {blogCategoriesContent ? (
+        <BlogCategories>
+            {blogCategoriesContent}
+        </BlogCategories>
+      ) : null}
       <ArticleContent className={variant+"-content"}> {/* Wrapper for image, description and image */}
         <ArticleImage className="article-image">
           {thumbnail == null ? <img /> : <img src={thumbnail} />}

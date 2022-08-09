@@ -92,12 +92,12 @@ const BlogOverview = ({getLatestBlogs, numBlogs, title, useCategoryFilter, blogC
   return (
     <Wrapper id="blog">
       {title ? <h1>{title}</h1> : HOME_TITLE}
-      <hr/>
       {useCategoryFilter && (
         <CategoryFiltersWrapper id="category-filters">
           {categoryFilters}
         </CategoryFiltersWrapper>
       )}
+      <hr/>
       <Blogs>
         {blogsToShow.map((blog) => {
           let url = "/posts/" + blog["id"];
@@ -112,6 +112,7 @@ const BlogOverview = ({getLatestBlogs, numBlogs, title, useCategoryFilter, blogC
               description={blog["description"]} 
               thumbnail={thumbnail} 
               blogUrl={url}
+              blogCategories={blog["categories"]}
             />
           )
         })}
