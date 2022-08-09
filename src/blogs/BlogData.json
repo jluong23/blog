@@ -5,7 +5,7 @@
         "title": "My 'Shower of Blunders' Game",
         "description": "Inspiration from Frank Marshall's 'Shower of Gold' game in 1912.",
         "thumbnail": "23.webp",
-        "tags": ["chess"]
+        "categories": ["Chess"]
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "title": "University of Sheffield – First Year Memories",
         "description": "My favourite memories of first year.",
         "thumbnail": "whatsapp-image-2020-04-12-at-10.48.26-1.jpeg",
-        "tags": ["University"] 
+        "categories": ["University"] 
     },
     {
         "id": 3,
@@ -21,6 +21,6 @@
         "title": "Two Years in Chess - A Reflection",
         "description": "Reflecting on my chess journey so far...",
         "thumbnail": "summer_league.jpg",
-        "tags": ["Chess", "University"]
+        "categories": ["Chess", "University"]
     }
 ]

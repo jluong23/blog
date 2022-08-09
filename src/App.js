@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
 import "./styling.css";
-import BlogOverview from "./components/BlogOverview";
 import BlogPage from "./pages/BlogPage";
 import ProjectOverview from "./components/ProjectOverview";
 import styled from "styled-components";
@@ -35,12 +34,33 @@ const App = () => {
   }
 
   function getLatestBlogs(n, category){
-    // gets n latest blogs, starting from most recent
+    // gets n latest blogs, index 0 being most recent blog
     let sortedBlogs = [...blogData]
     sortedBlogs.sort(function(a,b){
       return new Date(b["date"]) - new Date(a["date"]);
     });
-    return sortedBlogs.slice(0, n);
+    sortedBlogs = sortedBlogs.slice(0, n);
+
+    // get blogs of a specific category if given
+    if(category){
+      sortedBlogs = sortedBlogs.filter((blog) => blog.categories.includes(category));
+    }
+    return sortedBlogs;
+  }
+
+  function getBlogCategories(){
+    // returns a dictionary of categories to blog count for all blogs
+    let categoryCounts = {};
+    blogData.map((blog) => {
+      blog.categories.map((category) => {
+        if(categoryCounts[category]){
+          categoryCounts[category] += 1;
+        }else{
+          categoryCounts[category] = 1;
+        }
+      });
+    });
+    return categoryCounts;
   }
 
   // used by scroll buttons, ref can be 'top' or a ref to a DOM object
@@ -64,7 +84,7 @@ const App = () => {
         <ContentWrapper>
           <Routes>
             <Route path="/" element={<Home setNavMenuFocus={setNavMenuFocus} scrollTo={scrollTo} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs}/>} />
-            <Route path="/posts" element={<BlogPage getLatestBlogs={getLatestBlogs}/>} />
+            <Route path="/posts" element={<BlogPage getLatestBlogs={getLatestBlogs} blogCategories={getBlogCategories()}/>} />
             <Route path="/posts/:blogId" element={<BlogPost />}/>
             <Route path="/projects" element={<ProjectOverview title={"Projects"}/>} />
             <Route path="/about" element={<About/>} />

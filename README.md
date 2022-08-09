@@ -1,6 +1,6 @@
 # James Luong's Blog and Portfolio Page
 
-The site is deployed [here](https://jluong23.github.io/blog/) via Github Pages.
+The site is deployed [here](https://jluong23.github.io/blog/) via GitHub Pages.
 
 To run locally, run `npm install`, then `npm start`.
 

@@ -19,7 +19,12 @@ const Projects = styled.div`
 `
 
 const ProjectOverview = React.forwardRef(({title, projectIds}, ref) => {
-  const HOME_TITLE = <h1>Recent Projects. <Link to="/projects">(See All)</Link></h1>
+  const HOME_TITLE = <div>
+    <h1>Recent Projects.</h1>
+    <h2>
+      <Link to="/projects">(See All)</Link>
+    </h2>
+  </div>
   // projectIds: only show these projects. If empty, map over all projects (projectData)
   let projectsToShow = projectIds ?  projectData.filter((project) => projectIds.includes(project.id)) : projectData
   return (

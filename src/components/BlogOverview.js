@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Article from "./Article";
 import { Link } from "react-router-dom";
@@ -30,21 +30,75 @@ const Blogs = styled.div`
       object-fit: contain;
     }
   }
+`
+
   
-  `
-const BlogOverview = ({getLatestBlogs, numBlogs, title}) => {
+const CategoryFiltersWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+  margin-left: auto;
+  margin-right: auto;
+  & > button {
+    font-size: 1.1em;
+    margin : 0 .2em;
+  }
+
+`
+
+const BlogOverview = ({getLatestBlogs, numBlogs, title, useCategoryFilter, blogCategories}) => {
+  const [blogsToShow, setBlogsToShow] = useState(getLatestBlogs(numBlogs));
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   const DEFAULT_NUM_BLOGS = 3;
   // default title is for home page, can be changed via props
-  const HOME_TITLE = <h1>Recent Blog Posts. <Link to="/posts">(See All)</Link></h1>
+  const HOME_TITLE = (
+    <div>
+      <h1>Recent Blog Posts.</h1>
+      <h2>
+        <Link to="/posts">(See All)</Link>
+      </h2>
+    </div>
+  );
   if(!numBlogs){
     numBlogs = DEFAULT_NUM_BLOGS;
   }
-  let recentBlogs = getLatestBlogs(numBlogs);
+  // category filter, include in render if useCategoryFiler is true and there exists blogCategories dictionary
+  let categoryFilters;
+
+  const categoryButtonClicked = (e, category, buttons) => {
+    if(selectedCategory == category){
+      // disable the selected category, showing all blogs
+      setSelectedCategory(""); // update state to no category
+      setBlogsToShow(getLatestBlogs(numBlogs)); // show all blogs
+    }else{
+      setSelectedCategory(category); // update state to selected category
+      setBlogsToShow(getLatestBlogs(numBlogs, category)); // show only blogs of given category
+    }
+  }
+
+  if(useCategoryFilter && blogCategories){
+    categoryFilters = Object.keys(blogCategories).map((category) => {
+      let count = blogCategories[category];
+      let buttonClass = selectedCategory == category ? "btn btn-success" : "btn btn-primary";
+      return (
+        <button key={category} className={buttonClass} onClick={(e) => {categoryButtonClicked(e, category, categoryFilters)}}>
+          {category} ({count})
+        </button>
+      )
+    });
+  }
+
   return (
     <Wrapper id="blog">
       {title ? <h1>{title}</h1> : HOME_TITLE}
+      {useCategoryFilter && (
+        <CategoryFiltersWrapper id="category-filters">
+          {categoryFilters}
+        </CategoryFiltersWrapper>
+      )}
       <Blogs>
-        {recentBlogs.map((blog) => {
+        {blogsToShow.map((blog) => {
           let url = "/posts/" + blog["id"];
           let thumbnail = require(`../blogs/assets/${blog["id"]}/${blog["thumbnail"]}`);
           return (
