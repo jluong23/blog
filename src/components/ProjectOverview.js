@@ -18,12 +18,15 @@ const Projects = styled.div`
   flex-direction: column;
 `
 
-const ProjectOverview = React.forwardRef((props, ref) => {
+const ProjectOverview = React.forwardRef(({title, projectIds}, ref) => {
+  const HOME_TITLE = <h1>Recent Projects. <Link to="/projects">(See All)</Link></h1>
+  // projectIds: only show these projects. If empty, map over all projects (projectData)
+  let projectsToShow = projectIds ?  projectData.filter((project) => projectIds.includes(project.id)) : projectData
   return (
     <Wrapper ref={ref} id="projects">
-      <h1>Projects. <Link to="/projects">(See All)</Link></h1>
+      {title ? <h1>{title}</h1> : HOME_TITLE}
       <Projects>
-        {projectData.map((project) => {
+        {projectsToShow.map((project) => {
           let thumbnail = require("../projects/thumbnails/" + project["thumbnail"]);
           return (
             <Article 

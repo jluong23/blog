@@ -59,7 +59,7 @@ const HomeContent = styled.div`
 `
 
 const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, getLatestBlogs}, ref) => {
-  const {projectRef, scrollDownButtonRef} = ref;
+  const {projectRef} = ref;
   // track the scroll y position of page, relative to projectRef
   const [scrollYProject, setscrollYProject] = useState(0);
   const [scrollUpArrow, setScrollUpArrow] = useState(false);
@@ -113,7 +113,7 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
           <button className="btn btn-primary btn-lg">Read my latest blog</button>
         </Link>
         <SocialMediaIcons />
-        <ScrollDownButton ref={scrollDownButtonRef} onClick={() => {scrollTo(projectRef); }}>
+        <ScrollDownButton onClick={() => {scrollTo(projectRef); }}>
             <FontAwesomeIcon icon={faCircleArrowDown}/>
         </ScrollDownButton>
       </HomeScreen>
@@ -124,7 +124,7 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
       </ScrollUpArrow>
       }
       <HomeContent>
-        <ProjectOverview ref={projectRef}/>
+        <ProjectOverview ref={projectRef} projectIds={[1,2]}/>
         <BlogOverview getLatestBlogs={getLatestBlogs}/>
         <About/>
       </HomeContent>

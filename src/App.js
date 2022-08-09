@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
 import "./styling.css";
 import BlogOverview from "./components/BlogOverview";
+import BlogPage from "./pages/BlogPage";
 import ProjectOverview from "./components/ProjectOverview";
 import styled from "styled-components";
 import React, { useEffect, useRef, useState } from "react";
@@ -31,15 +32,9 @@ const App = () => {
   const refs = {
     projectRef: useRef(),
     navMenuRef: useRef(),
-    scrollDownButtonRef: useRef(),
   }
 
-  // // used to print refs when updated
-  // useEffect(() => {
-  //   console.log(refs);
-  // }, [refs])
-
-  function getLatestBlogs(n){
+  function getLatestBlogs(n, category){
     // gets n latest blogs, starting from most recent
     let sortedBlogs = [...blogData]
     sortedBlogs.sort(function(a,b){
@@ -69,9 +64,9 @@ const App = () => {
         <ContentWrapper>
           <Routes>
             <Route path="/" element={<Home setNavMenuFocus={setNavMenuFocus} scrollTo={scrollTo} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs}/>} />
-            <Route path="/posts" element={<BlogOverview getLatestBlogs={getLatestBlogs}/>} />
+            <Route path="/posts" element={<BlogPage getLatestBlogs={getLatestBlogs}/>} />
             <Route path="/posts/:blogId" element={<BlogPost />}/>
-            <Route path="/projects" element={<ProjectOverview/>} />
+            <Route path="/projects" element={<ProjectOverview title={"Projects"}/>} />
             <Route path="/about" element={<About/>} />
           </Routes>
         </ContentWrapper>

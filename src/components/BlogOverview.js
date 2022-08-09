@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   background-color: darkgray;
+  margin-left: auto;
+  margin-right: auto;
   @media screen and (min-width: 1200px) {
       width: 75%;
   }
@@ -29,13 +31,18 @@ const Blogs = styled.div`
     }
   }
   
-`
-const NUM_BLOGS_TO_RECEIVE = 3;
-const BlogOverview = ({getLatestBlogs}) => {
-  let recentBlogs = getLatestBlogs(NUM_BLOGS_TO_RECEIVE);
+  `
+const BlogOverview = ({getLatestBlogs, numBlogs, title}) => {
+  const DEFAULT_NUM_BLOGS = 3;
+  // default title is for home page, can be changed via props
+  const HOME_TITLE = <h1>Recent Blog Posts. <Link to="/posts">(See All)</Link></h1>
+  if(!numBlogs){
+    numBlogs = DEFAULT_NUM_BLOGS;
+  }
+  let recentBlogs = getLatestBlogs(numBlogs);
   return (
     <Wrapper id="blog">
-      <h1>Recent Blog Posts. <Link to="/posts">(See All)</Link></h1>
+      {title ? <h1>{title}</h1> : HOME_TITLE}
       <Blogs>
         {recentBlogs.map((blog) => {
           let url = "/posts/" + blog["id"];
