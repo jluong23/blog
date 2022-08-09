@@ -21,7 +21,8 @@ const Wrapper = styled.div`
   p{
     margin: auto;
     width: 90%;
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1000px) {
+      width: 70%;
     }
   }
 `

@@ -14,7 +14,7 @@ const Content = (
         <p>
             I continued playing online chess, reaching 2000 rating in Rapid on <a href="https://lichess.org">lichess.org</a> in August 2020 and writing this <Link to={"/posts/1"}>blog post</Link>. 
         </p>
-        <BlogImage blogId={3} imgName="qg.jpg" imgAlt="Front cover of the Queen's Gambit novel." maxWidth={"400px"} imgCaption="The Queen's Gambit novel, adapted by the Netflix series"/>
+        <BlogImage blogId={3} imgName="qg.jpg" imgAlt="Front cover of the Queen's Gambit novel." maxWidth={"400px"} imgCaption="The Queen's Gambit novel, adapted by the Netflix series."/>
         <p>
             The second year of University came around in September 2020 and I started playing with the University Chess Society. This all took place online due to the pandemic which was awkward at times; it was difficult to discuss
             a previous match with 8+ people in the same Discord voice chat. However, it was nice to have a regular weekly activity and meet other students who enjoyed playing chess,
@@ -26,7 +26,7 @@ const Content = (
             travelling to different chess tournaments and picking up bouldering with these lot.
             Now that I've graduated, the time just flew by.
         </p>
-        <BlogImage blogId={3} imgName="donc.jpg" imgAlt="" maxWidth={"500px"} imgCaption="Doncaster Chess Congress, February 2022"/>
+        <BlogImage blogId={3} imgName="donc.jpg" imgAlt="" maxWidth={"500px"} imgCaption="Doncaster Chess Congress, February 2022."/>
         <p>
             But back to early 2021: I started improving a lot during this period, playing more competitively in the Rotherham Online League. 
             This league included local club players in Sheffield and South Yorkshire who transitioned to playing online after the OTB (Over the Board / in person) tournaments had been cancelled.
@@ -56,7 +56,7 @@ const Content = (
             The games were always so stupid after a few drinks, but it got to the point where I was sobering up, the sun was coming back up and we were playing decent chess again.
         </p>
         <BlogImage blogId={3} imgName="su.jpg" imgAlt="" maxWidth={"500px"} imgCaption="Chess in front of Sheffield SU, June 2022. Don't have any pictures from 2021, so imagine this with more people!"/>
-        <BlogImage blogId={3} imgName="traf.jpg" imgAlt="" maxWidth={"500px"} imgCaption="ChessFest at Trafalgar Square"/>
+        <BlogImage blogId={3} imgName="traf.jpg" imgAlt="" maxWidth={"500px"} imgCaption="ChessFest at Trafalgar Square, meeting Mr Chess President Alejandro."/>
         <p>
             My third year came around in September 2021 and was now part of the University Chess Society Committee as Team Captain. The first chess meetup was so ridiculous. We expected a huge 
             turnout from the new mailing list and bought loads of sets in anticipation. It still wasn't enough. The room was packed and we were scrambling for spare chess sets and seats. 
@@ -68,7 +68,7 @@ const Content = (
             team matches fortnightly. Half of the games were played in our home venue at University and the other half took us around different towns/cities in South Yorkshire. 
             
         </p>
-        <BlogGallery imgCaption="Summer League Matches: Away at Barnsley. At home vs Hillsborough">
+        <BlogGallery imgCaption="Summer League Matches: Away at Barnsley. At home vs Hillsborough.">
             <BlogImage blogId={3} imgName="barnsley.jpg" imgAlt=""/>
             <BlogImage blogId={3} imgName="summer_league.jpg" imgAlt=""/>
         </BlogGallery>
