@@ -20,6 +20,10 @@ const ContentWrapper = styled.div`
   padding: 0.5em;
   height: 100%;
   text-align: center;
+  & > *{
+    margin-left: auto;
+    margin-right: auto;
+  }
 `
 
 

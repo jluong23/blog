@@ -2,11 +2,14 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Article from "./Article";
 import projectData from "../projects/projectData.json"
-
+import { Link } from "react-router-dom";
 const Wrapper = styled.div`
   background-color: darkgray;
   @media screen and (min-width: 1200px) {
       width: 75%;
+  }
+  & a {
+    text-decoration: none;
   }
 `
 
@@ -18,7 +21,7 @@ const Projects = styled.div`
 const ProjectOverview = React.forwardRef((props, ref) => {
   return (
     <Wrapper ref={ref} id="projects">
-      <h1>Projects.</h1>
+      <h1>Projects. <Link to="/projects">(See All)</Link></h1>
       <Projects>
         {projectData.map((project) => {
           let thumbnail = require("../projects/thumbnails/" + project["thumbnail"]);

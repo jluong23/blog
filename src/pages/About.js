@@ -10,8 +10,6 @@ const Wrapper = styled.div`
   & a{
     text-decoration: none;
   }
-  margin-left: auto;
-  margin-right: auto; 
   max-width: 1000px;
 `
 const InfoWrapper = styled.div`

@@ -19,7 +19,7 @@ const ErrorDiv = styled.div`
 
 const Image = styled.img`
     width: 100%;
-    ${(props) => props.maxWidth ? `max-width: ${props.maxWidth}` : null}
+    ${(props) => props.maxWidth ? `max-width: ${props.maxWidth};` : "max-width: 700px;"}
     `
 
 const BlogImage = ({blogId, imgName, imgAlt, imgCaption, maxWidth}) => {
