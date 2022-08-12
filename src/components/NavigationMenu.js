@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import {  Link } from "react-router-dom";
 import { useSpring, animated, config } from "react-spring";
 
+
 const Wrapper = styled(animated.div)`
   position: fixed;
-  background-color: gray;
+  background-color: ${({ bgColor }) => `${bgColor}`};
   height: 100%;
   top: 0;
   z-index: 10;
@@ -24,7 +25,8 @@ const MenuItems = styled.div`
     width: 100%;
   }
   & a:hover {
-    background-color: darkgray;
+    background-color: ${({ hoverColor }) => `${hoverColor}`};
+
   }
 `
 
@@ -39,6 +41,7 @@ const itemNames = {
 
 const NavigationMenu = React.forwardRef((props, ref) => {
   const {navMenuRef} = ref;
+  const theme = useTheme();
 
   const slideInAnimation = useSpring({ 
     config: {...config.slow},
@@ -63,8 +66,8 @@ const NavigationMenu = React.forwardRef((props, ref) => {
     });
 
   return (
-    <Wrapper style={slideInAnimation} ref={navMenuRef}>
-      <MenuItems>
+    <Wrapper style={slideInAnimation} ref={navMenuRef} bgColor={theme.navMenuColor}>
+      <MenuItems hoverColor={theme.navMenuHoverColor}>
           {Object.keys(itemNames).map((item) => {
             let url = itemNames[item]
             return (

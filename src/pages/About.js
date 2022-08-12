@@ -1,7 +1,7 @@
 // About.js
 
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import displayPicture from "../assets/southwark.jpeg";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 
@@ -13,7 +13,8 @@ const Wrapper = styled.div`
   max-width: 1000px;
 `
 const InfoWrapper = styled.div`
-  background-color: darkgray;
+  background-color: ${({ bgColor }) => `${bgColor}`};
+  /* background-color: darkgray; */
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -56,9 +57,10 @@ const Email = styled.a`
   }
 `
 const About = (props) => {
+  const theme = useTheme();
   return (
     <Wrapper id="about">
-      <InfoWrapper>
+      <InfoWrapper bgColor={theme.overviewColor}>
         <Info>
           <Email href="mailto:jamesluong@hotmail.co.uk">
             <h1>jamesluong@<br/>hotmail.co.uk</h1>

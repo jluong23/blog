@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Article from "./Article";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
-  background-color: darkgray;
+  background-color: ${({ bgColor }) => `${bgColor}`};
   margin-left: auto;
   margin-right: auto;
   @media screen and (min-width: 1200px) {
@@ -49,6 +49,7 @@ const CategoryFiltersWrapper = styled.div`
 const BlogOverview = ({getLatestBlogs, numBlogs, title, useCategoryFilter, blogCategories}) => {
   const [blogsToShow, setBlogsToShow] = useState(getLatestBlogs(numBlogs));
   const [selectedCategory, setSelectedCategory] = useState("");
+  const theme = useTheme();
 
   const DEFAULT_NUM_BLOGS = 3;
   // default title is for home page, can be changed via props
@@ -90,7 +91,7 @@ const BlogOverview = ({getLatestBlogs, numBlogs, title, useCategoryFilter, blogC
   }
 
   return (
-    <Wrapper id="blog">
+    <Wrapper id="blog" bgColor={theme.overviewColor}>
       {title ? <h1>{title}</h1> : HOME_TITLE}
       {useCategoryFilter && (
         <CategoryFiltersWrapper id="category-filters">

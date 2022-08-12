@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {  Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faMagnifyingGlass, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faMagnifyingGlass, faHome, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 const Wrapper = styled.div`
     display: flex;
@@ -18,7 +18,13 @@ const HamburgerIcon = styled.span`
     cursor: pointer;
   }
 `
-const Header = ({absoluteHeader, setNavMenuFocus}) => {
+
+const DarkModeIcon = styled.span`
+  &:hover{
+    cursor: pointer;
+  }
+`
+const Header = ({absoluteHeader, setNavMenuFocus, toggleTheme}) => {
 
   return (
     <Wrapper absolutePosition={absoluteHeader}>
@@ -28,7 +34,10 @@ const Header = ({absoluteHeader, setNavMenuFocus}) => {
         <Link to="/">
           <FontAwesomeIcon icon={faHome} size="lg"/>
         </Link>
-        <FontAwesomeIcon icon={faMagnifyingGlass} visibility="hidden" size="lg"/>
+        <DarkModeIcon>
+          <FontAwesomeIcon icon={faMoon} onClick={() => {toggleTheme()}} size="lg"/>
+
+        </DarkModeIcon>
     </Wrapper>
   );
 };
