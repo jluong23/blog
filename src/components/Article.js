@@ -38,7 +38,6 @@ const ArticleContent = styled.div`
 `
 
 const ArticleImage = styled.div`
-  opacity: 70%;
   width: 75%;
   max-width: 500px;
   & > img{

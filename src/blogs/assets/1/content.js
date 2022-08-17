@@ -7,7 +7,7 @@ const Content = (
         <p>I probably didn't read it properly as a kid since I couldn't remember much about the content, but it was nice to see those famous games in the book that I later saw by other means as I've gotten older, like the Shower of Gold game or Bobby Fischer's queen sacrifice to windmill tactic. There was also a section on Chess Playing Software, where you could buy one for under $50 and would beat grandmasters regularly. These computers are much more publicly available nowadays, so it's crazy how much has changed since then.</p>
         <h3 >Frank Marshall's 'Shower of Gold' Game</h3>
         <p>This game was played by Frank Marshall and Stepan Levitky in 1912 and the 'Shower of Gold' name comes from the audience supposedly throwing gold coins on the board after Marshall played a spectacular move. There's reason to believe this didn't happen and chess players are pretty crazy but a brilliant move nonetheless. Definitely more beautiful than my game.</p>
-        <BlogImage blogId={1} imgName={"23.webp"} imgAlt={"Move 23"} imgCaption={"Marshall plays Qg3!! as Black."} />
+        <BlogImage blogId={1} imgName={"23.png"} imgAlt={"Move 23"} imgCaption={"Marshall plays Qg3!! as Black."} />
         <p>After Qg3, the threat is Qxh2 with checkmate. So White must remove the black queen. However, neither the f or g pawn can take the queen as White will be checkmated soon after.</p>
         <p>If White plays fxg3, Ne2 pushes the king into the corner, then the ice skater Rxf1 is a back rank checkmate.</p>
         <p>If White plays hxg3, Ne2 is mate in one!</p>

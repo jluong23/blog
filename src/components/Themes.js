@@ -4,7 +4,7 @@ import bgDark from "../assets/bg_dark.png";
 export const lightTheme = {
     text: '#363537',
     backgroundImage: bg,
-    imageOpacity: "inherit",
+    imageOpacity: "80%",
     overviewColor: "darkgray",
     navMenuColor: "darkgray",
     navMenuHoverColor: "gray",

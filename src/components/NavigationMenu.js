@@ -76,6 +76,7 @@ const NavigationMenu = React.forwardRef((props, ref) => {
               </Link>
             )
           })}
+        <a href="https://github.com/jluong23/cv/blob/main/main.pdf" onClick={() => {props.setNavMenuFocus(false)}} target={"_blank"}>CV</a>
       </MenuItems>
     </Wrapper>
   );
