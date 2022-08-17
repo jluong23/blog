@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.295db3f4.css",
-    "main.js": "/blog/static/js/main.717ffea9.js",
+    "main.js": "/blog/static/js/main.7d33ba40.js",
     "static/media/img_20190923_094021457.jpg": "/blog/static/media/img_20190923_094021457.287774de2f39aa7ee32e.jpg",
     "static/media/img_20191002_171218010-copy.jpg": "/blog/static/media/img_20191002_171218010-copy.6e59ec8a7cbe501dba09.jpg",
     "static/media/received_606280930158746.jpeg": "/blog/static/media/received_606280930158746.8c40883a2e6415e0b121.jpeg",
@@ -14,6 +14,7 @@
     "static/media/img_20191216_201542548.jpg": "/blog/static/media/img_20191216_201542548.9396baf1fff245c5d995.jpg",
     "static/media/img_20200201_133500397_hdr.jpg": "/blog/static/media/img_20200201_133500397_hdr.27935e16b4c672693f58.jpg",
     "static/media/su.jpg": "/blog/static/media/su.242164a2561265005287.jpg",
+    "static/media/23.png": "/blog/static/media/23.978844fccd48d71a8f7a.png",
     "static/media/img_20191006_221832024.jpg": "/blog/static/media/img_20191006_221832024.e4076704efc53fd4d0ea.jpg",
     "static/media/barnsley.jpg": "/blog/static/media/barnsley.89aae49c121e76bb644c.jpg",
     "static/media/southwark.jpeg": "/blog/static/media/southwark.67683a3055352c25a211.jpeg",
@@ -42,7 +43,6 @@
     "static/media/img_20191002_175236450.jpg": "/blog/static/media/img_20191002_175236450.7516fd78cea08815cc98.jpg",
     "static/media/donc.jpg": "/blog/static/media/donc.237845647ed30dac3a8f.jpg",
     "static/media/snapchat-1831123840.jpg": "/blog/static/media/snapchat-1831123840.4a21537cb0756202a8cf.jpg",
-    "static/media/23.webp": "/blog/static/media/23.1299fbb240ab90837f0a.webp",
     "static/media/qg.jpg": "/blog/static/media/qg.7ea991efd433935259ff.jpg",
     "static/media/bham2.jpg": "/blog/static/media/bham2.bb0356895b2a6cba3028.jpg",
     "static/media/john.png": "/blog/static/media/john.f28f5e25c88f2df2cf87.png",
@@ -64,10 +64,10 @@
     "static/media/ratings-1.webp": "/blog/static/media/ratings-1.d51b8bbc96c6a139320e.webp",
     "index.html": "/blog/index.html",
     "main.295db3f4.css.map": "/blog/static/css/main.295db3f4.css.map",
-    "main.717ffea9.js.map": "/blog/static/js/main.717ffea9.js.map"
+    "main.7d33ba40.js.map": "/blog/static/js/main.7d33ba40.js.map"
   },
   "entrypoints": [
     "static/css/main.295db3f4.css",
-    "static/js/main.717ffea9.js"
+    "static/js/main.7d33ba40.js"
   ]
 }
