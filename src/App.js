@@ -11,8 +11,8 @@ import blogData from "./blogs/BlogData.json";
 import NavigationMenu from "./components/NavigationMenu";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
-import { lightTheme, darkTheme } from "./components/Themes";
-import { GlobalStyles } from "./components/GlobalStyles";
+import SiteTheme from "./components/SiteTheme";
+
 const AppWrapper = styled.div`
   height: 100%;
   width: inherit;
@@ -80,27 +80,28 @@ const App = () => {
   const [theme, setTheme] = useState("dark");
   
   const toggleTheme = () => {
-    theme == "light" ? setTheme("dark") : setTheme("light"); 
+    let newTheme = theme == "light" ? "dark" : "light";
+    setTheme(newTheme) 
+    window.localStorage.setItem('theme', newTheme);
   }
   return (
     <BrowserRouter basename="/blog">
-      <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-          <GlobalStyles/>
-          <ScrollToTop/> {/* React scroll restoration on each page, scrolling to top */}
-          <AppWrapper>
-            <Header absoluteHeader={absoluteHeader} setNavMenuFocus={setNavMenuFocus} toggleTheme={toggleTheme}/>
-            <NavigationMenu navMenuFocus={navMenuFocus} setNavMenuFocus={setNavMenuFocus} ref={refs}/>
-            <ContentWrapper>
-              <Routes>
-                <Route path="/" element={<Home setNavMenuFocus={setNavMenuFocus} scrollTo={scrollTo} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs}/>} />
-                <Route path="/posts" element={<BlogPage getLatestBlogs={getLatestBlogs} blogCategories={getBlogCategories()}/>} />
-                <Route path="/posts/:blogId" element={<BlogPost />}/>
-                <Route path="/projects" element={<ProjectOverview title={"Projects"}/>} />
-                <Route path="/about" element={<About/>} />
-              </Routes>
-            </ContentWrapper>
-          </AppWrapper>
-      </ThemeProvider>
+      <SiteTheme theme={theme} setTheme={setTheme}>
+        <ScrollToTop/> {/* React scroll restoration on each page, scrolling to top */}
+        <AppWrapper>
+          <Header absoluteHeader={absoluteHeader} setNavMenuFocus={setNavMenuFocus} toggleTheme={toggleTheme}/>
+          <NavigationMenu navMenuFocus={navMenuFocus} setNavMenuFocus={setNavMenuFocus} ref={refs}/>
+          <ContentWrapper>
+            <Routes>
+              <Route path="/" element={<Home setNavMenuFocus={setNavMenuFocus} scrollTo={scrollTo} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs}/>} />
+              <Route path="/posts" element={<BlogPage getLatestBlogs={getLatestBlogs} blogCategories={getBlogCategories()}/>} />
+              <Route path="/posts/:blogId" element={<BlogPost />}/>
+              <Route path="/projects" element={<ProjectOverview title={"Projects"}/>} />
+              <Route path="/about" element={<About/>} />
+            </Routes>
+          </ContentWrapper>
+        </AppWrapper>
+      </SiteTheme>
     </BrowserRouter>
   );
 };
