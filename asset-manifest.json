@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.295db3f4.css",
-    "main.js": "/blog/static/js/main.048def50.js",
+    "main.js": "/blog/static/js/main.b9b77795.js",
     "static/media/img_20190923_094021457.jpg": "/blog/static/media/img_20190923_094021457.287774de2f39aa7ee32e.jpg",
     "static/media/img_20191002_171218010-copy.jpg": "/blog/static/media/img_20191002_171218010-copy.6e59ec8a7cbe501dba09.jpg",
+    "static/media/cg.png": "/blog/static/media/cg.f4b27581cecf78eca0ed.png",
     "static/media/received_606280930158746.jpeg": "/blog/static/media/received_606280930158746.8c40883a2e6415e0b121.jpeg",
     "static/media/76756970___n.png": "/blog/static/media/76756970_10215134694068011_2173026875071266816_n.71e02aa7d66052449acb.png",
     "static/media/img_20200211_094736457.jpg": "/blog/static/media/img_20200211_094736457.7af108186204187e9f19.jpg",
@@ -45,9 +46,9 @@
     "static/media/snapchat-1831123840.jpg": "/blog/static/media/snapchat-1831123840.4a21537cb0756202a8cf.jpg",
     "static/media/qg.jpg": "/blog/static/media/qg.7ea991efd433935259ff.jpg",
     "static/media/bham2.jpg": "/blog/static/media/bham2.bb0356895b2a6cba3028.jpg",
-    "static/media/john.png": "/blog/static/media/john.f28f5e25c88f2df2cf87.png",
+    "static/media/john.png": "/blog/static/media/john.89bfeba3f41e7399eb23.png",
     "static/media/traf.jpg": "/blog/static/media/traf.ae746efa1d63057d7f4a.jpg",
-    "static/media/diss.png": "/blog/static/media/diss.56ff85ea059edfe76b70.png",
+    "static/media/diss.png": "/blog/static/media/diss.33f66a0eaadc21c24bb1.png",
     "static/media/received_791234197963795.jpg": "/blog/static/media/received_791234197963795.3d19828587bc1c587642.jpg",
     "static/media/bham.jpg": "/blog/static/media/bham.213bcc2cda42acbb07f2.jpg",
     "static/media/received_453842115265611.jpg": "/blog/static/media/received_453842115265611.06c285b1aba7b233ee98.jpg",
@@ -59,15 +60,16 @@
     "static/media/whatsapp-image-2020-04-12-at-10.48.26.jpeg": "/blog/static/media/whatsapp-image-2020-04-12-at-10.48.26.689b70ce63ff492af7ae.jpeg",
     "static/media/rotherham-online.png": "/blog/static/media/rotherham-online.185d22a0f279351f2752.png",
     "static/media/bg.png": "/blog/static/media/bg.f688a68c8cce4ca1521d.png",
+    "static/media/proj.png": "/blog/static/media/proj.6346b57e1e243f3205fd.png",
     "static/media/snapchat-2130413755.jpg": "/blog/static/media/snapchat-2130413755.ab40ef0c11f498a0a259.jpg",
     "static/media/bg_dark.png": "/blog/static/media/bg_dark.fed50d5a4671bcf96699.png",
     "static/media/ratings-1.webp": "/blog/static/media/ratings-1.d51b8bbc96c6a139320e.webp",
     "index.html": "/blog/index.html",
     "main.295db3f4.css.map": "/blog/static/css/main.295db3f4.css.map",
-    "main.048def50.js.map": "/blog/static/js/main.048def50.js.map"
+    "main.b9b77795.js.map": "/blog/static/js/main.b9b77795.js.map"
   },
   "entrypoints": [
     "static/css/main.295db3f4.css",
-    "static/js/main.048def50.js"
+    "static/js/main.b9b77795.js"
   ]
 }
