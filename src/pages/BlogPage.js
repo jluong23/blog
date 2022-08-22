@@ -10,10 +10,7 @@ const Wrapper = styled.div`
 
 
 const BlogPage = ({getLatestBlogs, blogCategories}) => {
-    return <div>
-        <BlogOverview title={"Blog"} getLatestBlogs={getLatestBlogs} numBlogs={"100"} useCategoryFilter={true} blogCategories={blogCategories}/>
-
-    </div>
+    return <BlogOverview title={"Blog"} getLatestBlogs={getLatestBlogs} numBlogs={"100"} useCategoryFilter={true} blogCategories={blogCategories}/>
 };
 
 export default BlogPage;

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   background-color: ${({ bgColor }) => `${bgColor}`};
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   @media screen and (min-width: 1200px) {
       width: 75%;
   }
@@ -37,8 +37,6 @@ const CategoryFiltersWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin: 1em 0;
-  margin-left: auto;
-  margin-right: auto;
   & > button {
     font-size: 1.1em;
     margin : 0 .2em;

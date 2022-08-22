@@ -12,6 +12,7 @@ import NavigationMenu from "./components/NavigationMenu";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import SiteTheme from "./components/SiteTheme";
+import ProjectPage from "./pages/ProjectPage";
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -91,12 +92,12 @@ const App = () => {
         <AppWrapper>
           <Header absoluteHeader={absoluteHeader} setNavMenuFocus={setNavMenuFocus} toggleTheme={toggleTheme}/>
           <NavigationMenu navMenuFocus={navMenuFocus} setNavMenuFocus={setNavMenuFocus} ref={refs}/>
-          <ContentWrapper>
+          <ContentWrapper className="content-wrapper">
             <Routes>
               <Route path="/" element={<Home setNavMenuFocus={setNavMenuFocus} scrollTo={scrollTo} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs}/>} />
               <Route path="/posts" element={<BlogPage getLatestBlogs={getLatestBlogs} blogCategories={getBlogCategories()}/>} />
               <Route path="/posts/:blogId" element={<BlogPost />}/>
-              <Route path="/projects" element={<ProjectOverview title={"Projects"}/>} />
+              <Route path="/projects" element={<ProjectPage/>}/>
               <Route path="/about" element={<About/>} />
             </Routes>
           </ContentWrapper>
