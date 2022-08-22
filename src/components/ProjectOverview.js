@@ -5,6 +5,7 @@ import projectData from "../projects/projectData.json"
 import { Link } from "react-router-dom";
 const Wrapper = styled.div`
   background-color: ${({ bgColor }) => `${bgColor}`};
+  padding: 1em;
   @media screen and (min-width: 1200px) {
       width: 75%;
   }
@@ -18,7 +19,7 @@ const Projects = styled.div`
   flex-direction: column;
 `
 
-const ProjectOverview = React.forwardRef(({title, projectIds, showDates}, ref) => {
+const ProjectOverview = React.forwardRef(({title, projectIds, showProjectYears}, ref) => {
   const theme = useTheme();
   const HOME_TITLE = <div>
     <h1>Recent Projects.</h1>
@@ -26,17 +27,24 @@ const ProjectOverview = React.forwardRef(({title, projectIds, showDates}, ref) =
       <Link to="/projects">(See All)</Link>
     </h2>
   </div>
+
   // projectIds: only show these projects. If empty, map over all projects (projectData)
   let projectsToShow = projectIds ?  projectData.filter((project) => projectIds.includes(project.id)) : projectData
+  // sort most recent projects at start of array
+  projectsToShow.sort(function(a,b){
+    return b.projectStartYear - a.projectStartYear;
+  });
+
   return (
     <Wrapper ref={ref} id="projects" bgColor={theme.overviewColor}>
       {title ? <h1>{title}</h1> : HOME_TITLE}
       <hr/>
       <Projects>
-        {projectsToShow.map((project) => {
+        {projectsToShow.map((project, index) => {
           let thumbnail = require("../projects/thumbnails/" + project["thumbnail"]);
-          return (
-            <Article 
+          let previousProject = projectsToShow[index-1];
+          let articleElem = (
+           <Article 
               variant="project"
               key={project["id"]}
               title={project["title"]} 
@@ -44,7 +52,18 @@ const ProjectOverview = React.forwardRef(({title, projectIds, showDates}, ref) =
               thumbnail={thumbnail}
               projectUrls={project["projectUrls"]}
             />
-          )
+          )            
+          if(showProjectYears && (index == 0 || previousProject.projectStartYear != project.projectStartYear) ){
+            {/* now on a new year of projects (or on the first project). display a new year header before article*/}
+            return (
+              <React.Fragment key={project.projectStartYear}>
+                <h1>{project.projectStartYear}</h1>
+                {articleElem}
+              </React.Fragment>
+            )
+          }else{
+            return articleElem
+          }
       })}        
       </Projects>
     </Wrapper>

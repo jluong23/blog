@@ -76,7 +76,7 @@ const BlogCategories = styled.div`
 `
 
 
-const Article = ({variant, date, color, title, description, thumbnail, blogCategories, blogUrl, projectUrls}) => {
+const Article = ({variant, color, title, description, thumbnail, blogCategories, blogDate, blogUrl, projectUrls}) => {
   let articleLinks = () => {
     if(variant == "blog" && blogUrl){
       return (
@@ -114,13 +114,14 @@ const Article = ({variant, date, color, title, description, thumbnail, blogCateg
     });
   }
 
-
   return (
     <Wrapper color={color}>
 
+      {/* for blogs, place title at the top and show blog date.
+        Project titles are shown in ArticleDescription.
+       */}
       {variant == 'blog' && <ArticleTitle variant={"blog"}>{title}</ArticleTitle>} 
-      {/* for blogs, place title at the top */}
-      {date && <ArticleDate>{moment(date).format("MMMM Do YYYY")}</ArticleDate>}
+      {blogDate && <ArticleDate>{moment(blogDate).format("MMMM Do YYYY")}</ArticleDate>}
       {blogCategoriesContent ? (
         <BlogCategories>
             {blogCategoriesContent}

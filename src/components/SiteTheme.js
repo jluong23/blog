@@ -8,7 +8,6 @@ const SiteTheme = ({theme, setTheme, children}) => {
     useEffect(() => {
         const localTheme = window.localStorage.getItem('theme');
         localTheme ? setTheme(localTheme) : setTheme(theme);
-        console.log(theme, localTheme);
         setMounted(true);
     }, []);
 

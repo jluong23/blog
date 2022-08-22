@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 
 
 const ProjectPage = ({}) => {
-    return <ProjectOverview title={"Projects"}/>
+    return <ProjectOverview title={"Projects"} showProjectYears={true}/>
 };
 
 export default ProjectPage;

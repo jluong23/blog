@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   background-color: ${({ bgColor }) => `${bgColor}`};
-  /* margin-left: auto;
-  margin-right: auto; */
+  padding: 1em;
   @media screen and (min-width: 1200px) {
       width: 75%;
   }
@@ -104,13 +103,13 @@ const BlogOverview = ({getLatestBlogs, numBlogs, title, useCategoryFilter, blogC
           return (
             <Article 
               variant="blog"
-              date={blog["date"]}
               key={blog["id"]} 
               color={blog["color"]} 
               title = {blog["title"]} 
               description={blog["description"]} 
               thumbnail={thumbnail} 
               blogUrl={url}
+              blogDate={blog["date"]}
               blogCategories={blog["categories"]}
             />
           )
