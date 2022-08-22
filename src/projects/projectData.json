@@ -2,7 +2,8 @@
     {
         "id": 1,
         "title":"John Mayer Fan Site", 
-        "description":"A fictional shopping page for selling John Mayer records. Also interacts with the Spotify API to provide a song of the day, built using React.", 
+        "description":"A fictional shopping page for selling John Mayer records, interacting with the Spotify API to provide a song of the day.",
+        "projectLanguages": "Built using React.", 
         "thumbnail": "john.png",
         "projectStartYear": 2022,
         "projectUrls": 
@@ -14,13 +15,38 @@
     {
         "id": 2,
         "title": "COM3610 Dissertation Project - VR API Driven Interface",
-        "description": "Project for third year undergraduate dissertation, creating a VR application to view a user's Google Photos images. Built using Unity and XR Interaction Toolkit.", 
+        "description": "Project for third year undergraduate dissertation, creating a VR application to view a user's Google Photos images.", 
+        "projectLanguages": "Built using Unity and XR Interaction Toolkit.", 
         "thumbnail": "diss.png",
         "projectStartYear": 2021,
         "projectUrls": 
             {
                 "Youtube Clip": "https://www.youtube.com/watch?v=kjZV_de_YFg",
                 "GitHub": "https://github.com/jluong23/unity-vr"
+            }
+    },
+    {
+        "id": 3,
+        "title": "COM3505 Computer Graphics - Robot in a Museum",
+        "description": "Assignment for Computer Graphics course.", 
+        "projectLanguages": "Built with Java and OpenGL (JOGL).", 
+        "thumbnail": "cg.png",
+        "projectStartYear": 2021,
+        "projectUrls": 
+            {
+                "Youtube Clip": "https://www.youtube.com/watch?v=Be-5MvDUhVg"
+            }
+    },
+    {
+        "id": 4,
+        "title": "physAid",
+        "description": "Newtonian Projectile Simulator, intended for Year 12 Physics students learning about projectiles. Submitted for Computer Science A-Level Coursework Project.", 
+        "projectLanguages": "Built with JS and HTML5 Canvas.", 
+        "thumbnail": "proj.png",
+        "projectStartYear": 2018,
+        "projectUrls": 
+            {
+                "GitHub": "https://github.com/jluong23/Projectile-Simulator/"
             }
     }
 ]

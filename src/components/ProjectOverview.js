@@ -51,12 +51,13 @@ const ProjectOverview = React.forwardRef(({title, projectIds, showProjectYears},
               description={project["description"]}
               thumbnail={thumbnail}
               projectUrls={project["projectUrls"]}
+              projectLanguages={project.projectLanguages}
             />
           )            
           if(showProjectYears && (index == 0 || previousProject.projectStartYear != project.projectStartYear) ){
             {/* now on a new year of projects (or on the first project). display a new year header before article*/}
             return (
-              <React.Fragment key={project.projectStartYear}>
+              <React.Fragment key={project.id}>
                 <h1>{project.projectStartYear}</h1>
                 {articleElem}
               </React.Fragment>

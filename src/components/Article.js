@@ -76,7 +76,7 @@ const BlogCategories = styled.div`
 `
 
 
-const Article = ({variant, color, title, description, thumbnail, blogCategories, blogDate, blogUrl, projectUrls}) => {
+const Article = ({variant, color, title, description, thumbnail, blogCategories, blogDate, blogUrl, projectUrls, projectLanguages}) => {
   let articleLinks = () => {
     if(variant == "blog" && blogUrl){
       return (
@@ -101,6 +101,20 @@ const Article = ({variant, color, title, description, thumbnail, blogCategories,
     }
     return null;
   }
+
+  let articleDescriptionText = () => {
+    if(variant == "blog"){
+      return <p>{description}</p>
+    }else if(variant == "project"){
+      return (
+        <React.Fragment>
+          <p>{description}</p>
+          <p>{projectLanguages}</p>
+        </React.Fragment>
+      )
+    }
+
+  };
 
   // list of categories for each blog post
   let blogCategoriesContent;
@@ -133,7 +147,7 @@ const Article = ({variant, color, title, description, thumbnail, blogCategories,
         </ArticleImage>
         <ArticleDescription> {/*Contains description and image*/}
           {variant == 'project' && <ArticleTitle variant={"project"}>{title}</ArticleTitle>} {/* for projects, place title above the description*/}
-          <p>{description}</p>
+          {articleDescriptionText()}
           {articleLinks()}
         </ArticleDescription>
       </ArticleContent>
