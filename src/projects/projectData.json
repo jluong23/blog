@@ -4,6 +4,7 @@
         "title":"John Mayer Fan Site", 
         "description":"A fictional shopping page for selling John Mayer records. Also interacts with the Spotify API to provide a song of the day, built using React.", 
         "thumbnail": "john.png",
+        "projectStartYear": "2022",
         "projectUrls": 
             {
                 "Live Site": "https://jluong23.github.io/shopping-cart-project/",
@@ -15,6 +16,7 @@
         "title": "COM3610 Dissertation Project - VR API Driven Interface",
         "description": "Project for third year undergraduate dissertation, creating a VR application to view a user's Google Photos images. Built using Unity and XR Interaction Toolkit.", 
         "thumbnail": "diss.png",
+        "projectStartYear": "2021",
         "projectUrls": 
             {
                 "Youtube Clip": "https://www.youtube.com/watch?v=kjZV_de_YFg",

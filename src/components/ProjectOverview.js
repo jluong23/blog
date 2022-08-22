@@ -18,7 +18,7 @@ const Projects = styled.div`
   flex-direction: column;
 `
 
-const ProjectOverview = React.forwardRef(({title, projectIds}, ref) => {
+const ProjectOverview = React.forwardRef(({title, projectIds, showDates}, ref) => {
   const theme = useTheme();
   const HOME_TITLE = <div>
     <h1>Recent Projects.</h1>

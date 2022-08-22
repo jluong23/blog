@@ -22,6 +22,8 @@ const Wrapper = styled.article`
 `
 const ArticleTitle = styled.h2`
     text-align: center;
+    /* add vertical margin for project titles */
+    ${({ variant }) => variant == "project" && "margin: 1em 0;"} 
 `
 
 const ArticleDate = styled.p`
@@ -115,7 +117,9 @@ const Article = ({variant, date, color, title, description, thumbnail, blogCateg
 
   return (
     <Wrapper color={color}>
-      <ArticleTitle>{title}</ArticleTitle>  
+
+      {variant == 'blog' && <ArticleTitle variant={"blog"}>{title}</ArticleTitle>} 
+      {/* for blogs, place title at the top */}
       {date && <ArticleDate>{moment(date).format("MMMM Do YYYY")}</ArticleDate>}
       {blogCategoriesContent ? (
         <BlogCategories>
@@ -127,6 +131,7 @@ const Article = ({variant, date, color, title, description, thumbnail, blogCateg
           {thumbnail == null ? <img /> : <img src={thumbnail} />}
         </ArticleImage>
         <ArticleDescription> {/*Contains description and image*/}
+          {variant == 'project' && <ArticleTitle variant={"project"}>{title}</ArticleTitle>} {/* for projects, place title above the description*/}
           <p>{description}</p>
           {articleLinks()}
         </ArticleDescription>
