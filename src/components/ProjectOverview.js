@@ -28,12 +28,23 @@ const ProjectOverview = React.forwardRef(({title, projectIds, showProjectYears},
     </h2>
   </div>
 
-  // projectIds: only show these projects. If empty, map over all projects (projectData)
-  let projectsToShow = projectIds ?  projectData.filter((project) => projectIds.includes(project.id)) : projectData
-  // sort most recent projects at start of array
-  projectsToShow.sort(function(a,b){
-    return b.projectStartYear - a.projectStartYear;
-  });
+  let projectsToShow = [];
+  if(projectIds){
+    // projectIds: only show these projects in the given order.
+    projectIds.map((projectId) => {
+      projectsToShow.push(
+        projectData.find((project) => {
+          return project.id === projectId;
+        })
+      )
+    })
+  }else{
+    // show all projects, sort most recent projects at start of array
+    projectsToShow = projectData;
+    projectsToShow.sort(function(a,b){
+      return b.projectStartYear - a.projectStartYear;
+    });
+  }
 
   return (
     <Wrapper ref={ref} id="projects" bgColor={theme.overviewColor}>

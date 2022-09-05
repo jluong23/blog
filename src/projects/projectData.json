@@ -48,5 +48,17 @@
             {
                 "GitHub": "https://github.com/jluong23/Projectile-Simulator/"
             }
+    },
+    {
+        "id": 5,
+        "title": "Task Tracker",
+        "description": "Full Stack project, managing user tasks with user authentication and login system.", 
+        "projectLanguages": "Built with MERN Stack. (React, Express and MongoDB)", 
+        "thumbnail": "task-tracker.png",
+        "projectStartYear": 2022,
+        "projectUrls": 
+            {
+                "GitHub": "https://github.com/jluong23/task-app-auth"
+            }
     }
 ]
