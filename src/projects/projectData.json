@@ -53,7 +53,7 @@
         "id": 5,
         "title": "Task Tracker",
         "description": "Full Stack project, managing user tasks with user authentication and login system.", 
-        "projectLanguages": "Built with MERN Stack. (React, Express and MongoDB)", 
+        "projectLanguages": "Built with MERN Stack. (MongoDB, Express, React and MongoDB)", 
         "thumbnail": "task-tracker.png",
         "projectStartYear": 2022,
         "projectUrls": 
