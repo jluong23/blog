@@ -125,7 +125,7 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
       </ScrollUpArrow>
       }
       <HomeContent>
-        <ProjectOverview ref={projectRef} projectIds={[5,2,1]}/>
+        <ProjectOverview ref={projectRef} numProjects={3}/>
         <BlogOverview  getLatestBlogs={getLatestBlogs}/>
         <About/>
       </HomeContent>
