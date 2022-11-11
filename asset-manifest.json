@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.295db3f4.css",
-    "main.js": "/blog/static/js/main.95fb1ff1.js",
+    "main.js": "/blog/static/js/main.3d331db5.js",
     "static/media/img_20190923_094021457.jpg": "/blog/static/media/img_20190923_094021457.287774de2f39aa7ee32e.jpg",
     "static/media/img_20191002_171218010-copy.jpg": "/blog/static/media/img_20191002_171218010-copy.6e59ec8a7cbe501dba09.jpg",
     "static/media/cg.png": "/blog/static/media/cg.f4b27581cecf78eca0ed.png",
@@ -14,6 +14,7 @@
     "static/media/img_20190923_140235781.jpg": "/blog/static/media/img_20190923_140235781.ba9b9b356dedb3fa898c.jpg",
     "static/media/img_20191216_201542548.jpg": "/blog/static/media/img_20191216_201542548.9396baf1fff245c5d995.jpg",
     "static/media/img_20200201_133500397_hdr.jpg": "/blog/static/media/img_20200201_133500397_hdr.27935e16b4c672693f58.jpg",
+    "static/media/chess-study-maker.png": "/blog/static/media/chess-study-maker.a67fc7d7d9d86d749b71.png",
     "static/media/su.jpg": "/blog/static/media/su.242164a2561265005287.jpg",
     "static/media/23.png": "/blog/static/media/23.978844fccd48d71a8f7a.png",
     "static/media/img_20191006_221832024.jpg": "/blog/static/media/img_20191006_221832024.e4076704efc53fd4d0ea.jpg",
@@ -67,10 +68,10 @@
     "static/media/ratings-1.webp": "/blog/static/media/ratings-1.d51b8bbc96c6a139320e.webp",
     "index.html": "/blog/index.html",
     "main.295db3f4.css.map": "/blog/static/css/main.295db3f4.css.map",
-    "main.95fb1ff1.js.map": "/blog/static/js/main.95fb1ff1.js.map"
+    "main.3d331db5.js.map": "/blog/static/js/main.3d331db5.js.map"
   },
   "entrypoints": [
     "static/css/main.295db3f4.css",
-    "static/js/main.95fb1ff1.js"
+    "static/js/main.3d331db5.js"
   ]
 }
