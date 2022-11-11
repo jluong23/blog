@@ -40,7 +40,7 @@ const Title = styled.div`
     font-size: 1.3em;
   `
 const HomeWrapper = styled.div`
-  height: 100%;
+  height: 100vh;
 `
 const HomeScreen = styled(animated.div)`
   display: flex;
