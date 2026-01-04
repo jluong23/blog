@@ -109,7 +109,7 @@ const Home = React.forwardRef(({setNavMenuFocus, scrollTo, setAbsoluteHeader, ge
               Hello, <br /> I'm James.
             </h1>
         </Title>
-        <p>Computer Science BSc Graduate from the University of Sheffield.</p>
+        <p>A full stack web developer, currently working at Cambridge Consultants.</p>
         <Link to={latestBlogUrl}>
           <button className="btn btn-primary btn-lg">Read my latest blog</button>
         </Link>

@@ -19,8 +19,6 @@ const Icons = styled.div`
     display: flex;
     justify-content: space-evenly;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
     font-size: 2.5em;
 `
 
@@ -38,7 +36,7 @@ const Icon = ({url, icon, color}) => {
     );
 };
 
-const SocialMediaIcons = (props) => {
+const SocialMediaIcons = () => {
   return (
     <Wrapper>
       <Icons>

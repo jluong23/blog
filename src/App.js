@@ -1,18 +1,17 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import BlogPost from "./pages/BlogPost";
-import "./styling.css";
-import BlogPage from "./pages/BlogPage";
-import ProjectOverview from "./components/ProjectOverview";
-import styled, { ThemeProvider } from "styled-components";
-import React, { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import styled from "styled-components";
 import blogData from "./blogs/BlogData.json";
+import Header from "./components/Header";
 import NavigationMenu from "./components/NavigationMenu";
 import ScrollToTop from "./components/ScrollToTop";
-import About from "./pages/About";
 import SiteTheme from "./components/SiteTheme";
+import About from "./pages/About";
+import BlogPage from "./pages/BlogPage";
+import BlogPost from "./pages/BlogPost";
+import Home from "./pages/Home";
 import ProjectPage from "./pages/ProjectPage";
+import "./styling.css";
 
 const AppWrapper = styled.div`
   height: 100%;

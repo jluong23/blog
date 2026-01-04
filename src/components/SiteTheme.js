@@ -4,14 +4,12 @@ import { lightTheme, darkTheme } from "./Themes";
 import { GlobalStyles } from "./GlobalStyles";
 
 const SiteTheme = ({theme, setTheme, children}) => {
-    const [mounted, setMounted] = useState(false);
     useEffect(() => {
         const localTheme = window.localStorage.getItem('theme');
         localTheme ? setTheme(localTheme) : setTheme(theme);
-        setMounted(true);
     }, []);
 
-    return ( mounted &&
+    return ( 
         <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
             <GlobalStyles/>
             {children}

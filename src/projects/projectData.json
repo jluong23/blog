@@ -1,19 +1,6 @@
 [
     {
         "id": 1,
-        "title":"John Mayer Fan Site", 
-        "description":"A fictional shopping page for selling John Mayer records, interacting with the Spotify API to provide a song of the day.",
-        "projectLanguages": "Built using React.", 
-        "thumbnail": "john.png",
-        "date": "2022/07/07",
-        "projectUrls": 
-            {
-                "Live Site": "https://jluong23.github.io/shopping-cart-project/",
-                "GitHub": "https://github.com/jluong23/shopping-cart-project"
-            }
-    },
-    {
-        "id": 2,
         "title": "COM3610 Dissertation Project - VR API Driven Interface",
         "description": "Project for third year undergraduate dissertation, creating a VR application to view a user's Google Photos images.", 
         "projectLanguages": "Built using Unity and XR Interaction Toolkit.", 
@@ -26,7 +13,7 @@
             }
     },
     {
-        "id": 3,
+        "id": 2,
         "title": "COM3505 Computer Graphics - Robot in a Museum",
         "description": "Assignment for Computer Graphics course.", 
         "projectLanguages": "Built with Java and OpenGL (JOGL).", 
@@ -38,7 +25,7 @@
             }
     },
     {
-        "id": 4,
+        "id": 3,
         "title": "physAid",
         "description": "Newtonian Projectile Simulator, intended for Year 12 Physics students learning about projectiles. Submitted for Computer Science A-Level Coursework Project.", 
         "projectLanguages": "Built with JS and HTML5 Canvas.", 
@@ -50,21 +37,9 @@
             }
     },
     {
-        "id": 5,
-        "title": "Task Tracker",
-        "description": "Full Stack project, managing user tasks with user authentication and login system.", 
-        "projectLanguages": "Built with MERN Stack. (MongoDB, Express, React and MongoDB)", 
-        "thumbnail": "task-tracker.png",
-        "date": "2022/09/08",
-        "projectUrls": 
-            {
-                "GitHub": "https://github.com/jluong23/task-app-auth"
-            }
-    },
-    {
-        "id": 6,
+        "id": 4,
         "title": "Chess Study App",
-        "description": "Formats PGNs and tournament data for Lichess studies. Currently developing the openings quiz.", 
+        "description": "A collection of chess tools for study. Includes an openings quiz!", 
         "projectLanguages": "Built with React and Typescript.", 
         "thumbnail": "chess-study-maker.png",
         "date": "2022/10/28",
