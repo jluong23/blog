@@ -8,3 +8,4 @@ The Python scripts are used to format Wordpress Blogs in HTML files into JSX.
 
 Built with React, Moment.js, React-Spring and Styled Components. Icons from Font Awesome.
 
+Deploy changes to github pages with `npm run deploy`
