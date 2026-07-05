@@ -4,22 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faGithub, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-const Wrapper = styled.div`
-  padding: .3em;
-
-  & p {
-    text-align: center;
-  }
-  & button {
-    margin: .5em 0;
-  }
-`
 
 const Icons = styled.div`
     display: flex;
     justify-content: space-evenly;
-    width: 50%;
-    font-size: 2.5em;
+    padding: .3em;
+    font-size: 1.7em;
+    @media screen and (min-width: 500px) {
+      font-size: 2em;
+    }
 `
 
 const IconLink = styled.a`
@@ -38,15 +31,13 @@ const Icon = ({url, icon, color}) => {
 
 const SocialMediaIcons = () => {
   return (
-    <Wrapper>
-      <Icons>
-        <Icon icon={faInstagram} url="https://www.instagram.com/jamesluong1/"/>
-        <Icon icon={faEnvelope} url="mailto:jamesluong@hotmail.co.uk"/>
-        <Icon icon={faGithub} url="https://github.com/jluong23"/>
-        <Icon icon={faYoutube} url="https://www.youtube.com/user/darkdragon1623"/>
-        <Icon icon={faLinkedin} url="https://www.linkedin.com/in/jamesluong23/"/>
-      </Icons>
-    </Wrapper>
+    <Icons>
+      <Icon icon={faInstagram} url="https://www.instagram.com/jamesluong1/"/>
+      <Icon icon={faEnvelope} url="mailto:jamesluong@hotmail.co.uk"/>
+      <Icon icon={faGithub} url="https://github.com/jluong23"/>
+      <Icon icon={faYoutube} url="https://www.youtube.com/user/darkdragon1623"/>
+      <Icon icon={faLinkedin} url="https://www.linkedin.com/in/jamesluong23/"/>
+    </Icons>
   );
 };
 
