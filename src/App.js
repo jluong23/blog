@@ -1,17 +1,17 @@
-import { useRef, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import styled from "styled-components";
-import blogData from "./blogs/BlogData.json";
-import Header from "./components/Header";
-import NavigationMenu from "./components/NavigationMenu";
-import ScrollToTop from "./components/ScrollToTop";
-import SiteTheme from "./components/SiteTheme";
-import About from "./pages/About";
-import BlogPage from "./pages/BlogPage";
-import BlogPost from "./pages/BlogPost";
-import Home from "./pages/Home";
-import ProjectPage from "./pages/ProjectPage";
-import "./styling.css";
+import { useRef, useState } from "react"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import styled from "styled-components"
+import blogData from "./blogs/BlogData.json"
+import Header from "./components/Header"
+import NavigationMenu from "./components/NavigationMenu"
+import ScrollToTop from "./components/ScrollToTop"
+import SiteTheme from "./components/SiteTheme"
+import About from "./pages/About"
+import BlogPage from "./pages/BlogPage"
+import BlogPost from "./pages/BlogPost"
+import Home from "./pages/Home"
+import ProjectPage from "./pages/ProjectPage"
+import "./styling.css"
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -22,12 +22,11 @@ const ContentWrapper = styled.div`
   padding: 0.5em;
   height: 100%;
   text-align: center;
-  & > *{
+  & > * {
     margin-left: auto;
     margin-right: auto;
   }
 `
-
 
 const App = () => {
   const refs = {
@@ -35,75 +34,100 @@ const App = () => {
     navMenuRef: useRef(),
   }
 
-  function getLatestBlogs(n, category){
+  function getLatestBlogs(n, category) {
     // gets n latest blogs, index 0 being most recent blog
     let sortedBlogs = [...blogData]
-    sortedBlogs.sort(function(a,b){
-      return new Date(b["date"]) - new Date(a["date"]);
-    });
-    sortedBlogs = sortedBlogs.slice(0, n);
+    sortedBlogs.sort(function (a, b) {
+      return new Date(b["date"]) - new Date(a["date"])
+    })
+    sortedBlogs = sortedBlogs.slice(0, n)
 
     // get blogs of a specific category if given
-    if(category){
-      sortedBlogs = sortedBlogs.filter((blog) => blog.categories.includes(category));
+    if (category) {
+      sortedBlogs = sortedBlogs.filter((blog) =>
+        blog.categories.includes(category),
+      )
     }
-    return sortedBlogs;
+    return sortedBlogs
   }
 
-  function getBlogCategories(){
+  function getBlogCategories() {
     // returns a dictionary of categories to blog count for all blogs
-    let categoryCounts = {};
+    let categoryCounts = {}
     blogData.map((blog) => {
       blog.categories.map((category) => {
-        if(categoryCounts[category]){
-          categoryCounts[category] += 1;
-        }else{
-          categoryCounts[category] = 1;
+        if (categoryCounts[category]) {
+          categoryCounts[category] += 1
+        } else {
+          categoryCounts[category] = 1
         }
-      });
-    });
-    return categoryCounts;
+      })
+    })
+    return categoryCounts
   }
   // used by scroll buttons, ref can be 'top' or a ref to a DOM object
   const scrollTo = (ref) => {
-    if(ref == "top"){
-      window.scrollTo({top: 0, behavior: "smooth"});
-    }else{
-      let y = ref.current.getBoundingClientRect().y + 1;
-      window.scrollBy({top: y, behavior: "smooth"});
+    if (ref == "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    } else {
+      let y = ref.current.getBoundingClientRect().y + 1
+      window.scrollBy({ top: y, behavior: "smooth" })
     }
   }
 
-  
-  const [navMenuFocus, setNavMenuFocus] = useState(false);
-  const [absoluteHeader, setAbsoluteHeader] = useState(false);
-  const [theme, setTheme] = useState("dark");
-  
+  const [navMenuFocus, setNavMenuFocus] = useState(false)
+  const [theme, setTheme] = useState(
+    () => window.localStorage.getItem("theme") || "dark",
+  )
+
   const toggleTheme = () => {
-    let newTheme = theme == "light" ? "dark" : "light";
-    setTheme(newTheme) 
-    window.localStorage.setItem('theme', newTheme);
+    let newTheme = theme == "light" ? "dark" : "light"
+    setTheme(newTheme)
+    window.localStorage.setItem("theme", newTheme)
   }
   return (
     <BrowserRouter basename="/blog">
-      <SiteTheme theme={theme} setTheme={setTheme}>
-        <ScrollToTop/> {/* React scroll restoration on each page, scrolling to top */}
+      <SiteTheme theme={theme}>
+        <ScrollToTop />{" "}
+        {/* React scroll restoration on each page, scrolling to top */}
         <AppWrapper>
-          <Header absoluteHeader={absoluteHeader} setNavMenuFocus={setNavMenuFocus} toggleTheme={toggleTheme}/>
-          <NavigationMenu navMenuFocus={navMenuFocus} setNavMenuFocus={setNavMenuFocus} ref={refs}/>
+          <Header setNavMenuFocus={setNavMenuFocus} toggleTheme={toggleTheme} />
+          <NavigationMenu
+            navMenuFocus={navMenuFocus}
+            setNavMenuFocus={setNavMenuFocus}
+            ref={refs}
+          />
           <ContentWrapper className="content-wrapper">
             <Routes>
-              <Route path="/" element={<Home setNavMenuFocus={setNavMenuFocus} scrollTo={scrollTo} setAbsoluteHeader={setAbsoluteHeader} getLatestBlogs={getLatestBlogs} ref={refs}/>} />
-              <Route path="/posts" element={<BlogPage getLatestBlogs={getLatestBlogs} blogCategories={getBlogCategories()}/>} />
-              <Route path="/posts/:blogId" element={<BlogPost />}/>
-              <Route path="/projects" element={<ProjectPage/>}/>
-              <Route path="/about" element={<About/>} />
+              <Route
+                path="/"
+                element={
+                  <Home
+                    setNavMenuFocus={setNavMenuFocus}
+                    scrollTo={scrollTo}
+                    getLatestBlogs={getLatestBlogs}
+                    ref={refs}
+                  />
+                }
+              />
+              <Route
+                path="/posts"
+                element={
+                  <BlogPage
+                    getLatestBlogs={getLatestBlogs}
+                    blogCategories={getBlogCategories()}
+                  />
+                }
+              />
+              <Route path="/posts/:blogId" element={<BlogPost />} />
+              <Route path="/projects" element={<ProjectPage />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </ContentWrapper>
         </AppWrapper>
       </SiteTheme>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default App;
+export default App
