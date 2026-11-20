@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faGithub, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram, faGithub, faYoutube, faLinkedin, faStrava } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -32,11 +32,12 @@ const Icon = ({url, icon, color}) => {
 const SocialMediaIcons = () => {
   return (
     <Icons>
-      <Icon icon={faInstagram} url="https://www.instagram.com/jamesluong1/"/>
-      <Icon icon={faEnvelope} url="mailto:jamesluong@hotmail.co.uk"/>
-      <Icon icon={faGithub} url="https://github.com/jluong23"/>
-      <Icon icon={faYoutube} url="https://www.youtube.com/user/darkdragon1623"/>
       <Icon icon={faLinkedin} url="https://www.linkedin.com/in/jamesluong23/"/>
+      <Icon icon={faGithub} url="https://github.com/jluong23"/>
+      <Icon icon={faEnvelope} url="mailto:jamesluong@hotmail.co.uk"/>
+      <Icon icon={faInstagram} url="https://www.instagram.com/jamesluong1/"/>
+      <Icon icon={faStrava} url="https://www.strava.com/athletes/26531616"/>
+      <Icon icon={faYoutube} url="https://www.youtube.com/user/darkdragon1623"/>
     </Icons>
   );
 };
